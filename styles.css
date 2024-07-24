@@ -62,14 +62,13 @@ body {
   }
 
   .banner {
-    width: calc(100% - 4px);
-    border:2px solid #151514;
+    width: 100%;
     border-radius: 4px;
     margin-bottom:10px;
   }
 
   .banner:hover {
-    border:2px solid #94E5A0;
+    filter: brightness(130%);
   }
 
   .updates {
@@ -279,7 +278,9 @@ body {
 
   .description {
     text-align:left;
-    font-size:20px;
+    font-size:16px;
+    align-items: flex-start;
+    align-content: flex-start;
   }
 
   .description p, .description ul {
