@@ -10,7 +10,7 @@
     "128": "images/icon128.png"
   },
   "action": {
-    "default_popup": "home.html",
+    "default_popup": "popup.html",
     "default_icon": {
       "16": "images/icon16.png",
       "48": "images/icon48.png",
@@ -23,6 +23,11 @@
     "storage",
     "https://docs.google.com/*",
     "https://spreadsheets.google.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["extpay.js"]
+    }
   ]
 }
-

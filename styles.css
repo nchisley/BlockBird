@@ -389,6 +389,7 @@ body {
     flex-grow:1;
     width:100%;
     font-weight:bold;
+    margin-bottom:10px;
   }
 
   #scan-button:hover, #clear-button:hover {
@@ -489,3 +490,7 @@ body {
     margin-top:10px;
   }
   
+  .alert-message {
+    color: red;
+    font-size: 14px;
+  }
