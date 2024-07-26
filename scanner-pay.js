@@ -1,5 +1,32 @@
+const extpay = ExtPay('blockbird');
+
 document.addEventListener('DOMContentLoaded', function() {
-  initializeScanner();
+  extpay.getUser().then(user => {
+    if (user.paid) {
+      initializeScanner();
+    } else {
+      document.body.innerHTML = `
+        <div class="header">
+          <h1>Scanner</h1>
+          <p>This feature is for BlockBirds only.</p>
+        </div>
+        <div class="content description-locked">
+          <p>Scan any webpage for the keywords "airdrop", "points", and "rewards" and see a count of occurrences with highlighting on the page.</p>
+          <button id="payment-button">Become a BlockBird for $9.99</button>
+          <div id="alert" class="alert"></div>
+        </div>
+        <div class="footer">
+          <div id="nav-container"></div>
+        </div>
+      `;
+      document.getElementById('payment-button').addEventListener('click', () => {
+        extpay.openPaymentPage();
+      });
+      populateNavLinks(); // Ensure the nav links are populated even if the user hasn't paid
+    }
+  }).catch(err => {
+    showAlert("Error fetching data :( Check that your ExtensionPay id is correct and you're connected to the internet.");
+  });
 
   function initializeScanner() {
     const scanButton = document.getElementById('scan-button');
