@@ -57,6 +57,61 @@ body {
     
   }*/
 
+  .default-page {
+    position:absolute;
+    width:auto;
+    top:0;
+    left:5px;
+    text-align:left;
+    padding-top:5px;
+  }
+
+  .default-page input {
+    width:15px;
+    height:15px;
+  }
+
+  .settings-icon {
+    font-size: 22px;
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    top: 0;
+    left: 5px;
+    text-decoration: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding-bottom: 5px;
+  }
+
+  .settings-icon:hover {
+    color: #94E5A0;
+  }
+
+  .tooltip {
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: auto;
+    min-width:65px;
+    background-color: #707070;
+    color: #fff;
+    font-size:10px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 4px;
+    position: absolute;
+    left:25px;
+    top:5px;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
   p, ul, li {
     width: 100%;
   }
@@ -293,6 +348,13 @@ body {
   }
   .description ul li {
     padding-bottom:10px;
+  }
+
+  .description-locked {
+    text-align:center;
+    font-size:16px;
+    align-items: center;
+    align-content: center;
   }
 
   .home {

@@ -10,14 +10,19 @@ document.addEventListener('DOMContentLoaded', function() {
           <h1>Scanner</h1>
           <p>This feature is for BlockBirds only.</p>
         </div>
-        <div class="content">
+        <div class="content description-locked">
+          <p>Scan any webpage for the keywords "airdrop", "points", and "rewards" and see a count of occurrences with highlighting on the page.</p>
           <button id="payment-button">Become a BlockBird for $9.99</button>
           <div id="alert" class="alert"></div>
+        </div>
+        <div class="footer">
+          <div id="nav-container"></div>
         </div>
       `;
       document.getElementById('payment-button').addEventListener('click', () => {
         extpay.openPaymentPage();
       });
+      populateNavLinks(); // Ensure the nav links are populated even if the user hasn't paid
     }
   }).catch(err => {
     showAlert("Error fetching data :( Check that your ExtensionPay id is correct and you're connected to the internet.");
@@ -176,5 +181,8 @@ document.addEventListener('DOMContentLoaded', function() {
         alertContainer.style.display = 'none';
       }, 5000);
     }
+
+    // Call the function to populate navigation links after initialization
+    populateNavLinks();
   }
 });
