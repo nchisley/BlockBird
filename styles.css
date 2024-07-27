@@ -11,6 +11,7 @@ Colors
 #94E5A0
 #A4D756
 #C7F284
+#b0f2ff
 --------
 Neutrals
 #0C0C0C
@@ -18,14 +19,97 @@ Neutrals
 #1d1d1c
 #30302e
 #707070
+#cacaca
 #e8f9ff
 --------
 */
 
+
+
+/* Dark mode styles */
+body.dark-mode .updates {
+  background-color:#0C0C0C;
+}
+
+body.dark-mode ::-webkit-scrollbar {
+  width:10px;
+  background-color:#0C0C0C;
+}
+body.dark-mode ::-webkit-scrollbar-button {
+  display:none;
+}
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background-color:#30302e;
+}
+
+body.dark-mode {
+  background-color: #1d1d1c;
+  color: #ffffff;
+}
+
+body.dark-mode .header, 
+body.dark-mode .footer {
+  background-color: #151514;
+}
+
+body.dark-mode input, 
+body.dark-mode #default-page-select {
+  background-color: #0C0C0C;
+  color: #ffffff;
+  border: 1px solid #0C0C0C;
+}
+
+body.dark-mode input:focus, body.dark-mode #default-page-select:focus {
+  border: 1px solid #94E5A0;
+  outline:0;
+}
+
+body.dark-mode #scan-button:hover, body.dark-mode #clear-button:hover, body.dark-mode #add-wallet:hover {
+  background-color: #707070;
+}
+
+body.dark-mode .settings-icon {
+  color: #ffffff;
+}
+
+body.dark-mode .settings-icon:hover {
+  color: #94E5A0;
+}
+
+body.dark-mode h1 {
+  color:#ffffff;
+}
+
+body.dark-mode .pagination-controls {
+  background-color:#0C0C0C;
+  border: 1px solid #0C0C0C;
+}
+
+body.dark-mode .list-item {
+  background-color: #30302e;
+  color:#ffffff;
+}
+
+body.dark-mode .list-item:hover {
+  background-color: #37523c;
+}
+
+body.dark-mode .nav-list-item {
+  background-color: #30302e;
+  color:#94E5A0;
+}
+
+body.dark-mode .nav-list-item:hover {
+  background-color: #707070;
+}
+
+/* Add more dark mode styles as needed */
+
+
 body {
-    background-color: #1d1d1c;
+    background-color: #ffffff;
     font-family: "Roboto", sans-serif;
-    color:#ffffff;
+    color:#1d1d1c;
     width: 400px;
     text-align:center;
     height:611px;
@@ -42,13 +126,13 @@ body {
 
   ::-webkit-scrollbar {
     width:10px;
-    background-color:#0C0C0C;
+    background-color:#e8f9ff;
   }
   ::-webkit-scrollbar-button {
     display:none;
   }
   ::-webkit-scrollbar-thumb {
-    background-color:#30302e;
+    background-color:#cacaca;
   }
   /*::-webkit-scrollbar-track {
 
@@ -63,7 +147,7 @@ body {
     top: 5px;
     left: 7px;
     text-decoration: none;
-    color: #ffffff;
+    color: #707070;
     cursor: pointer;
   }
 
@@ -104,7 +188,7 @@ body {
   }
 
   .updates {
-    background-color:#0C0C0C;
+    background-color:#e8f9ff;
     display:flex;
     flex-flow: column nowrap;
     overflow-y:scroll;
@@ -137,7 +221,7 @@ body {
     align-content:center;
     flex-grow:0;
     padding: 15px;
-    background-color: #0C0C0C;
+    background-color: #b0f2ff;
   }
 
   .header p {
@@ -169,7 +253,7 @@ body {
     align-content:center;
     flex-grow:0;
     padding: 4px;
-    background-color: #0C0C0C;
+    background-color: #b0f2ff;
   }
 
   #logo {
@@ -184,7 +268,7 @@ body {
     margin-bottom: 0;
     margin-top:0;
     width:100%;
-    color:#e8f9ff;
+    color:#1d1d1c;
   }
 
   button {
@@ -299,18 +383,18 @@ body {
     width:10%;
     justify-content: center;
     align-content: center;
-    background-color: #151514;
+    background-color: #cacaca;
     border-radius: 0;
     padding: 5px;
     text-decoration: none;
     height:20px;
-    color:#94E5A0;
+    color:#151514;
     font-weight:bold;
     text-transform: uppercase;
   }
 
   .nav-list-item:hover {
-    background-color: #30302e;
+    background-color: #94E5A0;
   }
 
   .description {
@@ -360,9 +444,9 @@ body {
   }
 
   input, #default-page-select {
-    background-color: #0C0C0C;
-    color:#ffffff;
-    border: 1px solid #0C0C0C;
+    background-color: #cacaca;
+    color:#1d1d1c;
+    border: 1px solid #cacaca;
     outline:0;
     border-radius:4px;
     height:30px;
@@ -405,17 +489,17 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #30302e;
+    background-color: #94E5A0;
     border-radius: 4px;
     padding: 10px;
     text-decoration: none;
     height:40px;
-    color:#ffffff;
+    color:#1d1d1c;
   }
   
   .list-item:hover {
-    background-color: #324c36;
-    color:#ffffff;
+    background-color: #cacaca;
+    color:#1d1d1c;
     cursor:pointer;
   }
 
@@ -445,8 +529,8 @@ body {
     margin-bottom:10px;
   }
 
-  #scan-button:hover, #clear-button:hover {
-    background-color: #707070;
+  #scan-button:hover, #clear-button:hover, #add-wallet:hover {
+    background-color: #cacaca;
     cursor:pointer;
   }
 
@@ -464,8 +548,8 @@ body {
   .pagination-controls {
     display: flex;
     padding:5px;
-    background-color:#0C0C0C;
-    border: 1px solid #0C0C0C;
+    background-color:#cacaca;
+    border: 1px solid #cacaca;
     border-radius:4px;
     justify-content: center;
     align-items: end;
