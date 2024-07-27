@@ -21,8 +21,7 @@
     "activeTab",
     "scripting",
     "storage",
-    "https://docs.google.com/*",
-    "https://spreadsheets.google.com/*"
+    "https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vSTKLXEgIRbqLvXOSEOyHxPTkQyND5YfBBLLce-mNxR7f-WIDEAyuy0SrB1u_p2DDVmnCx1413RWIsn/pubhtml?gid=1520699041&single=true"
   ],
   "content_scripts": [
     {
