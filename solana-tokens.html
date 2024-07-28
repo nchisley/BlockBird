@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Scanner</title>
+  <title>Solana Tokens</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="default-page.js"></script>
-  <script src="scanner.js"></script>
   <script src="include-links.js"></script>
   <script src="dark-mode.js"></script>
+  <script src="solana-tokens.js"></script>
 </head>
 <body>
   <div class="header">
@@ -15,18 +15,14 @@
       <i class="fas fa-cog"></i><span class="tooltiptext">Settings</span>
     </a>
     <a href="https://t.me/blockbirdchat" target="_blank" class="telegram-icon tooltip">
-      <i class="fa-brands fa-telegram"></i><span class="tooltiptext">Contact</span>
+        <i class="fa-brands fa-telegram"></i><span class="tooltiptext">Contact</span>
     </a>
-    <h1>Scanner</h1>
-    <p>Scan the current webpage for signs of an airdrop or points system.</p>
+    <h1>Solana Tokens</h1>
+    <p>Five most recently added Solana tokens.</p>
   </div>
-  <div class="content">
-    <div id="current-url"></div>
-    <a id="scan-button">Scan Now</a>
-    <a id="clear-button" style="display:none;">Clear</a>
-    <div id="loading" style="display:none;">scanning...</div>
-    <div id="count"></div>
-    <div id="alert" class="alert" style="display:none;"></div>
+  <div class="content tokens-content">
+    <div id="loading">Loading...</div>
+    <div id="token-list" class="flex-list"></div>
   </div>
   <div class="footer">
     <div id="nav-container"></div>

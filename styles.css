@@ -58,7 +58,7 @@ body {
   }*/
 
   .settings-icon {
-    font-size: 18px;
+    font-size: 20px;
     position: absolute;
     top: 8px;
     left: 10px;
@@ -68,6 +68,40 @@ body {
   }
 
   .settings-icon:hover {
+    color: #689f70;
+  }
+
+  .telegram-icon {
+    font-size: 21px;
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    text-decoration: none;
+    color: #2d4731;
+    cursor: pointer;
+  }
+
+  .telegram-icon .tooltiptext {
+    right:25px;
+    left:unset;
+  }
+  
+  .telegram-icon:hover {
+    color: #689f70;
+  }
+
+  .close-icon {
+    font-size: 26px;
+    position: absolute;
+    top: 4px;
+    left: 12px;
+    text-decoration: none;
+    color: #2d4731;
+    cursor: pointer;
+    font-weight:bold;
+  }
+  
+  .close-icon:hover {
     color: #689f70;
   }
   
@@ -232,6 +266,48 @@ body {
     font-size:12px;
     min-width:40px;
     max-height:20px;
+  }
+
+  .tokens-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    flex-grow: 1;
+    justify-content: center;
+  }
+  
+  .flex-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+    width:100%;
+  }
+  
+  .flex-list .list-item {
+    background-color: #c8edce;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    color: #1d1d1d;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .flex-list .list-item:hover {
+    background-color: #c8edce;
+    cursor: default;
+  }
+  
+  .flex-list .list-item div {
+    margin-bottom: 5px;
+  }
+  
+  .flex-list .list-item div:last-child {
+    margin-bottom: 0;
   }
 
   .settings-content {
@@ -601,11 +677,11 @@ body.dark-mode button:hover, body.dark-mode #scan-button:hover, body.dark-mode #
   background-color: #689f70;
 }
 
-body.dark-mode .settings-icon {
+body.dark-mode .settings-icon, body.dark-mode .telegram-icon {
   color: #94E5A0;
 }
 
-body.dark-mode .settings-icon:hover {
+body.dark-mode .settings-icon:hover, body.dark-mode .telegram-icon:hover {
   color: #c8edce;
 }
 
@@ -625,6 +701,10 @@ body.dark-mode .list-item {
 
 body.dark-mode .list-item:hover {
   background-color: #37523c;
+}
+
+body.dark-mode .flex-list .list-item:hover {
+  background-color: #132415;
 }
 
 body.dark-mode .nav-list-item {
