@@ -12,7 +12,7 @@ Colors
 --------
 Neutrals
 #0C0C0C Space
-#151514 Meteor
+#151515 Meteor
 #1d1d1d Charcoal
 #303030 Metal
 #707070 Steel
@@ -48,7 +48,7 @@ body {
     display:none;
   }
   ::-webkit-scrollbar-thumb {
-    background-color:#888888;
+    background-color:#689f70;
   }
   /*::-webkit-scrollbar-track {
 
@@ -60,8 +60,8 @@ body {
   .settings-icon {
     font-size: 18px;
     position: absolute;
-    top: 5px;
-    left: 7px;
+    top: 8px;
+    left: 10px;
     text-decoration: none;
     color: #2d4731;
     cursor: pointer;
@@ -137,7 +137,7 @@ body {
     align-content:center;
     flex-grow:0;
     padding: 15px;
-    background-color: #c8edce;
+    background-color: #eeeeee;
   }
 
   .header p {
@@ -169,7 +169,7 @@ body {
     align-content:center;
     flex-grow:0;
     padding: 4px;
-    background-color: #c8edce;
+    background-color: #eeeeee;
   }
 
   #logo {
@@ -197,7 +197,7 @@ body {
     border-radius: 4px;
     padding: 10px;
     text-decoration: none;
-    color: #151514;
+    color: #151515;
     font-size: 16px;
     font-weight: bold;
     cursor:pointer;
@@ -304,7 +304,7 @@ body {
     padding: 5px;
     text-decoration: none;
     height:20px;
-    color:#151514;
+    color:#151515;
     font-weight:bold;
     text-transform: uppercase;
   }
@@ -416,7 +416,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #eeeeee;
+    background-color: #c8edce;
     border-radius: 4px;
     padding: 10px;
     text-decoration: none;
@@ -448,7 +448,7 @@ body {
     border-radius: 4px;
     padding: 10px;
     text-decoration: none;
-    color:#151514;
+    color:#151515;
     font-size:16px;
     flex-grow:1;
     width:100%;
@@ -456,8 +456,8 @@ body {
     margin-bottom:10px;
   }
 
-  #scan-button:hover, #clear-button:hover, #add-wallet:hover {
-    background-color: #cacaca;
+  button:hover, #scan-button:hover, #clear-button:hover, #add-wallet:hover {
+    background-color: #c8edce;
     cursor:pointer;
   }
 
@@ -498,7 +498,7 @@ body {
     margin: 2px;
     padding: 8px;
     background-color: #eeeeee;
-    color:#151514;
+    color:#151515;
     font-family: "Roboto", sans-serif;
     font-size:14px;
     border-style:none;
@@ -558,40 +558,38 @@ body {
     color: red;
     font-size: 14px;
   }
-
-
   
 /* DARK MODE */
+body.dark-mode {
+  background-color: #303030;
+  color: #ffffff;
+}
+
 body.dark-mode .updates {
-  background-color:#303030;
+  background-color:#151515;
 }
 
 body.dark-mode ::-webkit-scrollbar {
   width:10px;
-  background-color:#0C0C0C;
+  background-color:#151515;
 }
 body.dark-mode ::-webkit-scrollbar-button {
   display:none;
 }
 body.dark-mode ::-webkit-scrollbar-thumb {
-  background-color:#303030;
-}
-
-body.dark-mode {
-  background-color: #1d1d1d;
-  color: #ffffff;
+  background-color:#2d4731;
 }
 
 body.dark-mode .header, 
 body.dark-mode .footer {
-  background-color: #151514;
+  background-color: #1d1d1d;
 }
 
 body.dark-mode input, 
 body.dark-mode #default-page-select {
-  background-color: #0C0C0C;
+  background-color: #151515;
   color: #ffffff;
-  border: 1px solid #0C0C0C;
+  border: 1px solid #151515;
 }
 
 body.dark-mode input:focus, body.dark-mode #default-page-select:focus {
@@ -599,16 +597,16 @@ body.dark-mode input:focus, body.dark-mode #default-page-select:focus {
   outline:0;
 }
 
-body.dark-mode #scan-button:hover, body.dark-mode #clear-button:hover, body.dark-mode #add-wallet:hover {
-  background-color: #707070;
+body.dark-mode button:hover, body.dark-mode #scan-button:hover, body.dark-mode #clear-button:hover, body.dark-mode #add-wallet:hover {
+  background-color: #689f70;
 }
 
 body.dark-mode .settings-icon {
-  color: #ffffff;
+  color: #94E5A0;
 }
 
 body.dark-mode .settings-icon:hover {
-  color: #94E5A0;
+  color: #c8edce;
 }
 
 body.dark-mode h1 {
@@ -621,7 +619,7 @@ body.dark-mode .pagination-controls {
 }
 
 body.dark-mode .list-item {
-  background-color: #303030;
+  background-color: #132415;
   color:#ffffff;
 }
 
@@ -630,14 +628,11 @@ body.dark-mode .list-item:hover {
 }
 
 body.dark-mode .nav-list-item {
-  background-color: #303030;
-  color:#94E5A0;
+  background-color: #2d4731;
+  color:#c8edce;
 }
 
 body.dark-mode .nav-list-item:hover {
-  background-color: #707070;
+  background-color: #689f70;
 }
-
-/* Add more dark mode styles as needed */
-
 
