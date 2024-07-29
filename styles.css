@@ -394,6 +394,11 @@ body {
     background-color: #94E5A0;
   }
 
+  .nav-list-item.current-page {
+    background-color: #ffffff;
+    cursor:unset;
+  }
+
   .description {
     text-align:left;
     font-size:16px;
@@ -719,5 +724,10 @@ body.dark-mode .nav-list-item {
 
 body.dark-mode .nav-list-item:hover {
   background-color: #689f70;
+}
+
+body.dark-mode .nav-list-item.current-page {
+  background-color:#303030;
+  cursor:unset;
 }
 

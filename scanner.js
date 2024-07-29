@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function displayCounts(counts) {
-      const getColor = (count) => count === 0 ? '#990000' : 'green';
+      const getColor = (count) => count === 0 ? 'red' : '#00ff4c';
 
       if (counts.airdrop === 0 && counts.points === 0 && counts.rewards === 0) {
         countContainer.innerHTML = `
