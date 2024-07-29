@@ -123,6 +123,16 @@ body {
     visibility: visible;
   }
 
+  /*.nav-list-item.tooltip .tooltiptext {
+    top:555px;
+    left:0;
+    height:10px;
+    width:100%;
+    padding:0;
+    background-color:transparent;
+    color:#151515;
+  }*/
+
   p, ul, li {
     width: 100%;
   }
@@ -386,7 +396,7 @@ body {
     height:20px;
     color:#151515;
     font-weight:bold;
-    text-transform: uppercase;
+    text-transform: none;
     font-size:16px;
   }
 
