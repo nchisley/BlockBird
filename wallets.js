@@ -1,9 +1,9 @@
-// wallets.js
 document.addEventListener('DOMContentLoaded', function() {
   const walletList = document.getElementById('wallet-list');
   const addWalletButton = document.getElementById('add-wallet');
   const walletLabelInput = document.getElementById('wallet-label');
   const walletAddressInput = document.getElementById('wallet-address');
+  const alertBox = document.getElementById('alert-box');
 
   function loadWallets() {
     chrome.storage.local.get(['wallets'], function(result) {
@@ -35,16 +35,29 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  function showAlert(message) {
+    alertBox.textContent = message;
+    alertBox.style.display = 'block';
+    setTimeout(() => {
+      alertBox.style.display = 'none';
+    }, 5000);
+  }
+
   addWalletButton.addEventListener('click', () => {
     const label = walletLabelInput.value.trim();
     const address = walletAddressInput.value.trim();
     if (label && address) {
       chrome.storage.local.get(['wallets'], function(result) {
         const wallets = result.wallets || [];
-        wallets.push({ label, address });
-        saveWallets(wallets);
-        walletLabelInput.value = '';
-        walletAddressInput.value = '';
+        const addressExists = wallets.some(wallet => wallet.address === address);
+        if (addressExists) {
+          showAlert('This address has already been added.');
+        } else {
+          wallets.push({ label, address });
+          saveWallets(wallets);
+          walletLabelInput.value = '';
+          walletAddressInput.value = '';
+        }
       });
     }
   });

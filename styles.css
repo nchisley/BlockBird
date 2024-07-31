@@ -336,6 +336,11 @@ body {
 
   #wallet-list {
     width:100%;
+    max-height:310px;
+    min-height:310px;
+    overflow-y:scroll;
+    padding:8px 8px 0 8px;
+    background-color:#151515
   }
 
   .wallet-item {
@@ -652,7 +657,8 @@ body {
   
   .alert-message {
     color: red;
-    font-size: 14px;
+    font-size: 12px;
+    width:100%;
   }
   
 /* DARK MODE */
