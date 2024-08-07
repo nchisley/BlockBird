@@ -4,32 +4,35 @@
   <title>Wallets</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="sortable.min.js"></script>
   <script src="default-page.js"></script>
   <script src="wallets.js"></script>
   <script src="include-links.js"></script>
   <script src="dark-mode.js"></script>
+  <script src="header.js"></script>
 </head>
 <body>
   <div class="header">
-    <a href="settings.html" class="settings-icon tooltip">
-      <i class="fas fa-cog"></i><span class="tooltiptext">Settings</span>
-    </a>
-    <a href="https://t.me/blockbirdchat" target="_blank" class="telegram-icon tooltip">
-      <i class="fa-brands fa-telegram"></i><span class="tooltiptext">Contact</span>
-    </a>
+    <div id="header-container"></div>
     <h1>Wallets</h1>
-    <p>Manage your crypto wallets for easy copy/paste.</p>
+    <h4>Manage your crypto wallets for easy copy/paste</h4>
   </div>
-  <div class="content wallets-content">
+  <div class="wallets-head">
     <div id="add-wallet-form">
+      <div class="import-export-group">
+        <button id="import-wallets-button" class="import-export">Import CSV</button>
+        <button id="export-wallets" class="import-export">Export CSV</button> 
+      </div>
       <input type="text" id="wallet-label" placeholder="Label">
       <input type="text" id="wallet-address" placeholder="Wallet Address">
-      <button id="add-wallet">Add</button>
+      <button id="add-wallet" title="Add Wallet"><i class="fas fa-plus"></i></button>
+      <input type="file" id="import-wallets" style="display:none;">
     </div>
-    <div id="alert-box" style="display: none;margin-top:-18px;" class="alert-message"></div>
+    <div id="alert-box" style="display: none;" class="alert-message"></div>
+  </div>
+  <div class="content">
     <h2>My Wallets</h2>
     <div id="wallet-list"></div>
-  </div>
   </div>
   <div class="footer">
     <div id="nav-container"></div>

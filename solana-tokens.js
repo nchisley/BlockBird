@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const data = await response.json();
         displayTokens(data);
       } catch (error) {
-        console.error('Error fetching Solana tokens:', error);
+        console.error('<span class="alert-negative">Error fetching Solana tokens:</span>', error);
         loadingIndicator.textContent = 'Failed to load tokens.';
       }
     }

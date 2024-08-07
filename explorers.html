@@ -8,24 +8,22 @@
   <script src="explorers.js"></script>
   <script src="include-links.js"></script>
   <script src="dark-mode.js"></script>
+  <script src="header.js"></script>
 </head>
 <body>
   <div class="header">
-    <a href="settings.html" class="settings-icon tooltip">
-      <i class="fas fa-cog"></i><span class="tooltiptext">Settings</span>
-    </a>
-    <a href="https://t.me/blockbirdchat" target="_blank" class="telegram-icon tooltip">
-      <i class="fa-brands fa-telegram"></i><span class="tooltiptext">Contact</span>
-    </a>
+    <div id="header-container"></div>
     <h1>Explore</h1>
-    <p>A searchable list of blockchain explorers.</p>
+    <h4>A searchable list of blockchain explorers</h4>
   </div>
-  <div class="content content-explorers">
-    <div id="controls" class="flex-container">
-      <input type="text" id="search" placeholder="Search blockchains...">
-    </div>
+  <div class="explore-head">
+    <input type="text" id="search" placeholder="Search blockchains...">
+  </div>
+  <div class="content content-explore">
     <div id="loading">loading...</div>
     <div id="list" class="grid-list"></div>
+  </div>
+  <div class="explore-foot">
     <div id="pagination" class="pagination-controls">
       <button id="firstPage">&laquo;</button>
       <button id="prevPage">&lt;</button>

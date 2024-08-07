@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentUrlContainer = document.getElementById('current-url');
 
     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-      currentUrlContainer.textContent = `Current URL: ${tabs[0].url}`;
+      currentUrlContainer.textContent = `URL: ${tabs[0].url}`;
     });
 
     scanButton.addEventListener('click', () => {
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
               displayCounts(counts);
               toggleButtons();
             } else {
-              showAlert('Error scanning the page.<br />This type of webpage is not able to be scanned.');
+              showAlert('<span class="alert-negative">Error scanning the page.<br />This type of webpage is not able to be scanned.</span>');
             }
           }
         );
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function displayCounts(counts) {
-      const getColor = (count) => count === 0 ? 'red' : '#00ff4c';
+      const getColor = (count) => count === 0 ? 'red' : '#689f70';
 
       if (counts.airdrop === 0 && counts.points === 0 && counts.rewards === 0) {
         countContainer.innerHTML = `
@@ -142,8 +142,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function toggleButtons() {
-      scanButton.style.display = scanButton.style.display === 'none' ? 'inline-block' : 'none';
-      clearButton.style.display = clearButton.style.display === 'none' ? 'inline-block' : 'none';
+      scanButton.style.display = scanButton.style.display === 'none' ? 'inline' : 'none';
+      clearButton.style.display = clearButton.style.display === 'none' ? 'inline' : 'none';
     }
 
     function showAlert(message) {

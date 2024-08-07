@@ -8,25 +8,23 @@
   <script src="scanner.js"></script>
   <script src="include-links.js"></script>
   <script src="dark-mode.js"></script>
+  <script src="header.js"></script>
 </head>
 <body>
   <div class="header">
-    <a href="settings.html" class="settings-icon tooltip">
-      <i class="fas fa-cog"></i><span class="tooltiptext">Settings</span>
-    </a>
-    <a href="https://t.me/blockbirdchat" target="_blank" class="telegram-icon tooltip">
-      <i class="fa-brands fa-telegram"></i><span class="tooltiptext">Contact</span>
-    </a>
+    <div id="header-container"></div>
     <h1>Scanner</h1>
-    <p>Scan the current webpage for signs of an airdrop or points system.</p>
+    <h4>Scan the page for signs of an airdrop or points system</h4>
   </div>
-  <div class="content">
+  <div class="scan-control">
     <div id="current-url"></div>
-    <a id="scan-button">Scan Now</a>
-    <a id="clear-button" style="display:none;">Clear</a>
+    <a id="scan-button" class="scanner-button">Scan Now</a>
+    <a id="clear-button" class="scanner-button" style="display:none;">Clear</a>
+  </div>
+  <div class="content content-scanner">
     <div id="loading" style="display:none;">scanning...</div>
-    <div id="count" style="height:60px;"></div>
-    <div id="alert" class="alert" style="display:none;height:60px;"></div>
+    <div id="count"></div>
+    <div id="alert" class="alert" style="display:none;"></div>
   </div>
   <div class="footer">
     <div id="nav-container"></div>

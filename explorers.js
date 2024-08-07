@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showLoading(false);
       })
       .catch(error => {
-        console.error('Error fetching data from the web page:', error);
+        console.error('<span class="alert-negative"">Error fetching data from the web page:</span>', error);
         showLoading(false);
       });
   }
