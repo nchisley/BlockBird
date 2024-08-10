@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function loadLanguage(lang) {
-      fetch(`${lang}.json`)
+      fetch(`languages/${lang}.json`)  // Updated path to load from the languages folder
         .then(response => response.json())
         .then(data => {
           translations = data;
@@ -184,6 +184,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Call the function to populate navigation links after initialization
-    populateNavLinks();
+    window.populateNavLinks();  // Ensure this function is defined in scripts.js
   }
 });
