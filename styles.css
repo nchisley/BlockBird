@@ -42,6 +42,12 @@ body {
   margin: 0;
 }
 
+body.panel-open {
+  width: 100%; /* Example style to demonstrate panel open */
+  height: 100vh;
+  overflow: hidden;
+}
+
 ::-webkit-scrollbar {
   width:10px;
   background-color:#cacaca;
@@ -100,6 +106,7 @@ body {
   padding: 4px;
   border-radius: 4px;
   z-index: 1;
+  text-wrap: nowrap;
 }
 
 .tooltip:hover .tooltiptext {
@@ -140,6 +147,7 @@ h3 {
   font-size: 16px;
   width:100%;
   margin:0;
+  height:30px;
 }
 
 h4 {
@@ -171,7 +179,8 @@ button:hover {
   cursor:pointer;
 }
 
-input {
+input,
+select {
   background-color: #cacaca;
   color:#1d1d1d;
   border: 1px solid #cacaca;
@@ -183,6 +192,10 @@ input {
   flex-grow: 1;
 }
 
+select {
+  height:42px;
+}
+
 input:focus,
 select:focus {
   border: 1px solid #94E5A0;
@@ -192,11 +205,6 @@ select:focus {
 input[type="checkbox"] {
   flex-grow:0;
   width:30px;
-}
-
-select {
-  flex-grow:1;
-  height:42px;
 }
 
 .info-box {
@@ -211,7 +219,7 @@ select {
 #alert-box {
   position:absolute;
   width:100%;
-  top:180px;
+  top:175px;
   left:0;
 }
 
@@ -222,11 +230,16 @@ select {
 }
 
 .alert-positive {
-  color: #00ff4c;
+  color: #00ab33;
 }
 
 .alert-negative {
   color: #ff0000;
+}
+
+.scan-alert {
+  color: #ff0000;
+  font-size:18px;
 }
 
 #loading {
@@ -326,16 +339,16 @@ select {
   align-content: flex-start;
 }
 
-#default-page-select {
-  width: 55%;
+.settings-select {
+  width: 100%;
 }
 
-#page-default-form, #dark-mode-form {
+.forms {
   display: flex;
   width:100%;
   flex-flow: row wrap;
   gap: 4px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   flex-grow: 1;
   align-items:center;
   align-content:center;
@@ -344,6 +357,12 @@ select {
 .settings-content label {
   width:25%;
   text-align:left;
+}
+
+.settings-content .set-it {
+  width:70%;
+  text-align:left;
+  flex-grow:1;
 }
 
 /***DASHBOARD***/
@@ -370,8 +389,9 @@ select {
 
 .updates {
   background-color:#cacaca;
-  margin:10px;
+  margin:0 10px 10px 10px;
   text-align:left;
+  font-size:14px;
 }
 
 .updates p {
@@ -606,19 +626,15 @@ button.import-export {
   font-size:12px;
 }
 
-#wallet-list {
-  width: 100%;
-  height:295px;
+.my-wallets {
+  background-color:#cacaca;
+  margin:0 10px 10px 10px;
+  text-align:left;
+  font-size:14px;
   overflow-y: scroll;
   padding: 8px 8px 0 8px;
   background-color: #cacaca;
   color:#151515;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  justify-content: space-evenly;
-  align-items: flex-start;
   flex-grow: 1;
 }
 
@@ -761,13 +777,13 @@ body.dark-mode .footer {
 }
 
 body.dark-mode input, 
-body.dark-mode #default-page-select {
+body.dark-mode .settings-select {
   background-color: #151515;
   color: #ffffff;
   border: 1px solid #151515;
 }
 
-body.dark-mode input:focus, body.dark-mode #default-page-select:focus {
+body.dark-mode input:focus, body.dark-mode .settings-select:focus {
   border: 1px solid #94E5A0;
   outline:0;
 }

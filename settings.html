@@ -1,40 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Settings</title>
+  <title data-translate="settings">Settings</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <script src="default-page.js"></script>
-  <script src="include-links.js"></script>
-  <script src="dark-mode.js"></script>
+  <script src="scripts.js"></script>
+  <script src="settings.js"></script>
 </head>
 <body>
   <div class="header">
-    <a href="https://t.me/blockbirdchat" target="_blank" class="telegram-icon tooltip">
-      <i class="fa-brands fa-telegram"></i><span class="tooltiptext">Contact</span>
-    </a>
-    <h1>Settings</h1>
-    <p>Configure your BlockBird</p>
+    <div id="header-container"></div>
+    <h1 data-translate="settings">Settings</h1>
+    <h4 data-translate="settings_description">Configure your BlockBird</h4>
   </div>
   <div class="content settings-content">
-    <div id="page-default-form">
-      <label for="default-page-select">Default Page</label>
-      <select id="default-page-select">
-        <option value="/popup.html">Dashboard</option>
-        <option value="/scanner.html">Scanner</option>
-        <option value="/explorers.html">Explore</option>
-        <option value="/wallets.html">Wallets</option>
-        <option value="/solana-tokens.html">Tokens</option>
-      </select>
+    <div id="language-form" class="forms">
+      <label for="language-select" data-translate="language">Language</label>
+      <div class="set-it">
+        <select id="language-select" class="settings-select">
+          <option value="english">English (USA)</option>
+          <option value="filipino">Filipino (Philippines)</option>
+          <option value="hausa">Hausa (Nigeria)</option>
+          <option value="hindi">Hindi (India)</option>
+          <option value="mandarin">Mandarin (China)</option>
+          <option value="brazilian">Portugese (Brazil)</option>
+          <option value="russian">Russian (Russia)</option>
+          <option value="spanish">Spanish (South America)</option>
+          <option value="thai">Thai (Thailand)</option>
+          <option value="ukrainian">Ukrainian (Ukraine)</option>
+          <option value="urdu">Urdu (Pakistan)</option>
+          <option value="vietnamese">Vietnamese (Vietnam)</option>
+        </select>
+      </div>
     </div>
-    <div id="dark-mode-form">
-      <label for="dark-mode-checkbox">Dark Mode</label>
-      <input type="checkbox" id="dark-mode-checkbox">
-    </div>       
+    <div id="page-default-form" class="forms">
+      <label for="default-page-select" data-translate="default_page">Default Page</label>
+      <div class="set-it">
+        <select id="default-page-select" class="settings-select">
+          <option value="/popup.html" data-translate="dashboard">Dashboard</option>
+          <option value="/scanner.html" data-translate="scanner">Scanner</option>
+          <option value="/explorers.html" data-translate="explore">Explore</option>
+          <option value="/wallets.html" data-translate="wallets">Wallets</option>
+          <option value="/solana-tokens.html" data-translate="tokens">Tokens</option>
+        </select>
+      </div>
+    </div>
+    <div id="dark-mode-form" class="forms">
+      <label for="dark-mode-checkbox" data-translate="dark_mode">Dark Mode</label>
+      <div class="set-it">
+        <input type="checkbox" id="dark-mode-checkbox">
+      </div>
+    </div>
+    <div id="sidebar-form" class="forms">
+      <label for="sidepanel-note" data-translate="side_panel">Side Panel</label>
+      <div class="set-it">
+        <span data-translate="side_panel_note">Right-click on the extension icon in the browser toolbar and select "Open side panel". This will allow you to navigate through different tabs and websites while keeping your BlockBird always visible.</span>
+      </div>
+    </div>            
   </div>
   <div class="footer">
     <div id="nav-container"></div>
   </div>
-  <script src="settings.js"></script>
 </body>
 </html>

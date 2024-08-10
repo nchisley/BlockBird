@@ -4,20 +4,17 @@
   <title>Solana Tokens</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <script src="default-page.js"></script>
-  <script src="include-links.js"></script>
-  <script src="dark-mode.js"></script>
+  <script src="scripts.js" defer></script>
   <script src="solana-tokens.js"></script>
-  <script src="header.js"></script>
 </head>
 <body>
   <div class="header">
     <div id="header-container"></div>
-    <h1>Solana Tokens</h1>
-    <h4>Five most recently added Solana tokens (<a href="https://jup.ag" target="_blank">Jupiter</a>)</h4>
+    <h1 data-translate="solana_tokens">Solana Tokens</h1>
+    <h4><span data-translate="recent_tokens">Five newest verified Solana tokens</span> (<a href="https://jup.ag" target="_blank">Jupiter</a>)</h4>
   </div>
   <div class="content tokens-content">
-    <div id="loading">Loading...</div>
+    <div id="loading" data-translate="loading">Loading...</div>
     <div id="token-list" class="flex-list"></div>
   </div>
   <div class="footer">

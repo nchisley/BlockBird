@@ -4,36 +4,31 @@
   <title>Wallets</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <script src="sortable.min.js"></script>
-  <script src="default-page.js"></script>
+  <script src="scripts.js" defer></script>
   <script src="wallets.js"></script>
-  <script src="include-links.js"></script>
-  <script src="dark-mode.js"></script>
-  <script src="header.js"></script>
+  <script src="sortable.min.js"></script>
 </head>
 <body>
   <div class="header">
     <div id="header-container"></div>
-    <h1>Wallets</h1>
-    <h4>Manage your crypto wallets for easy copy/paste</h4>
+    <h1 data-translate="wallets">Wallets</h1>
+    <h4 data-translate="wallets_description">Manage your crypto wallets for easy copy/paste</h4>
   </div>
   <div class="wallets-head">
     <div id="add-wallet-form">
       <div class="import-export-group">
-        <button id="import-wallets-button" class="import-export">Import CSV</button>
-        <button id="export-wallets" class="import-export">Export CSV</button> 
+        <button id="import-wallets-button" class="import-export" data-translate="import_csv">Import CSV</button>
+        <button id="export-wallets" class="import-export" data-translate="export_csv">Export CSV</button> 
       </div>
-      <input type="text" id="wallet-label" placeholder="Label">
-      <input type="text" id="wallet-address" placeholder="Wallet Address">
+      <input type="text" id="wallet-label" placeholder="Label" data-translate="label">
+      <input type="text" id="wallet-address" placeholder="Wallet Address" data-translate="wallet_address">
       <button id="add-wallet" title="Add Wallet"><i class="fas fa-plus"></i></button>
       <input type="file" id="import-wallets" style="display:none;">
     </div>
     <div id="alert-box" style="display: none;" class="alert-message"></div>
   </div>
-  <div class="content">
-    <h2>My Wallets</h2>
-    <div id="wallet-list"></div>
-  </div>
+    <h3 data-translate="my_wallets">My Wallets</h3>
+    <div class="content my-wallets" id="wallet-list"></div>
   <div class="footer">
     <div id="nav-container"></div>
   </div>

@@ -2,6 +2,36 @@ document.addEventListener('DOMContentLoaded', function() {
   initializeScanner();
 
   function initializeScanner() {
+    let translations = {};
+
+    function applyTranslations(translations) {
+      document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[key]) {
+          element.innerHTML = translations[key];
+        }
+      });
+    }
+
+    function loadLanguage(lang) {
+      fetch(`${lang}.json`)
+        .then(response => response.json())
+        .then(data => {
+          translations = data;
+          applyTranslations(translations);
+        })
+        .catch(error => console.error('Error loading translations:', error));
+    }
+
+    function initializeTranslations() {
+      chrome.storage.local.get(['language'], function(result) {
+        const userLang = result.language || navigator.language.split('-')[0] || 'en';
+        loadLanguage(userLang);
+      });
+    }
+
+    initializeTranslations();
+
     const scanButton = document.getElementById('scan-button');
     const clearButton = document.getElementById('clear-button');
     const resultsContainer = document.getElementById('results');
@@ -29,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
               displayCounts(counts);
               toggleButtons();
             } else {
-              showAlert('<span class="alert-negative">Error scanning the page.<br />This type of webpage is not able to be scanned.</span>');
+              showAlert(translations['error_scanning_page'], 'negative');
             }
           }
         );
@@ -121,14 +151,12 @@ document.addEventListener('DOMContentLoaded', function() {
       const getColor = (count) => count === 0 ? 'red' : '#689f70';
 
       if (counts.airdrop === 0 && counts.points === 0 && counts.rewards === 0) {
-        countContainer.innerHTML = `
-          <p style="color:red;">Our scan found no signs of an airdrop or points system on this webpage. You can try scanning other pages on this domain.</p>
-        `;
+        countContainer.textContent = translations['our_scan_found_no_signs'];
       } else {
         countContainer.innerHTML = `
-          <p style="color:${getColor(counts.airdrop)};">Airdrop: ${counts.airdrop}</p>
-          <p style="color:${getColor(counts.points)};">Points: ${counts.points}</p>
-          <p style="color:${getColor(counts.rewards)};">Rewards: ${counts.rewards}</p>
+          <p style="color:${getColor(counts.airdrop)};">${translations['airdrop']}: ${counts.airdrop}</p>
+          <p style="color:${getColor(counts.points)};">${translations['points']}: ${counts.points}</p>
+          <p style="color:${getColor(counts.rewards)};">${translations['rewards']}: ${counts.rewards}</p>
         `;
       }
     }
@@ -146,9 +174,9 @@ document.addEventListener('DOMContentLoaded', function() {
       clearButton.style.display = clearButton.style.display === 'none' ? 'inline' : 'none';
     }
 
-    function showAlert(message) {
+    function showAlert(message, type) {
       const alertContainer = document.getElementById('alert');
-      alertContainer.innerHTML = `<span class="alert-message">${message}</span>`;
+      alertContainer.innerHTML = `<span class="scan-alert alert-${type}">${message}</span>`;
       alertContainer.style.display = 'block';
       setTimeout(() => {
         alertContainer.style.display = 'none';
