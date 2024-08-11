@@ -591,7 +591,7 @@ button#add-wallet {
   display:flex;
   flex-flow:row wrap;
   gap:4px;
-  margin-bottom:20px;
+  margin-bottom:30px;
 }
 
 input#wallet-label {
