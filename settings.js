@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+  chrome.storage.local.set({ setupLinkClicked: true });
+
   const defaultPageSelect = document.getElementById('default-page-select');
   const darkModeCheckbox = document.getElementById('dark-mode-checkbox');
   const languageSelect = document.getElementById('language-select');
