@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Inject the extension version into the settings page
+  const manifestData = chrome.runtime.getManifest();
+  const versionElement = document.getElementById('extension-version');
+  versionElement.textContent = manifestData.version;
 
+  // Set a flag indicating the user has visited the settings page
   chrome.storage.local.set({ setupLinkClicked: true });
 
   const defaultPageSelect = document.getElementById('default-page-select');
@@ -10,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch(`languages/${lang}.json`)
       .then(response => response.json())
       .then(translations => {
-        window.applyTranslations(translations);  // Use global function
+        window.applyTranslations(translations);
         chrome.storage.local.set({ language: lang });
       })
       .catch(error => console.error('Error loading translations:', error));
