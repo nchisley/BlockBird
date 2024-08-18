@@ -94,6 +94,32 @@ body.panel-open {
   color: #689f70;
 }
 
+.info-icon {
+  padding:1px 4px;
+  background:#2d4731;
+  text-decoration: none;
+  color:#eeeeee;
+  cursor: pointer;
+  font-size:12px;
+  border-radius:4px;
+}
+
+.info-icon:hover {
+  background:#689f70;
+  color:#eeeeee;
+}
+
+.info-icon .tooltiptext {
+  left:20px;
+  top:80px;
+  box-sizing:border-box;
+  width:360px;
+  padding:15px 20px 5px 20px;
+  text-align:left;
+  font-size:12px;
+  text-wrap:wrap;
+}
+
 .tooltiptext {
   visibility: hidden;
   position:absolute;
@@ -107,6 +133,7 @@ body.panel-open {
   border-radius: 4px;
   z-index: 1;
   text-wrap: nowrap;
+  box-shadow: 0 0 4px #444444;
 }
 
 .tooltip:hover .tooltiptext {
