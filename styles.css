@@ -96,12 +96,14 @@ body.panel-open {
 
 .info-icon {
   padding:1px 4px;
-  background:#2d4731;
+  margin-bottom:10px;
+  background-color:#2d4731;
   text-decoration: none;
   color:#eeeeee;
   cursor: pointer;
   font-size:12px;
   border-radius:4px;
+  font-weight:bold;
 }
 
 .info-icon:hover {
@@ -110,13 +112,13 @@ body.panel-open {
 }
 
 .info-icon .tooltiptext {
-  left:20px;
+  left:8px;
   top:80px;
   box-sizing:border-box;
-  width:360px;
+  width:384px;
   padding:15px 20px 5px 20px;
   text-align:left;
-  font-size:12px;
+  font-size:14px;
   text-wrap:wrap;
 }
 
@@ -125,15 +127,16 @@ body.panel-open {
   position:absolute;
   top:0;
   left:25px;
-  background-color: #303030;
-  color: #fff;
+  background:#ccd7f1;
+  color: #1d1d1d;
   font-size:12px;
   text-align: center;
+  font-weight:bold;
   padding: 4px;
   border-radius: 4px;
   z-index: 1;
   text-wrap: nowrap;
-  box-shadow: 0 0 4px #444444;
+  box-shadow: 0 0 4px #222222;
 }
 
 .tooltip:hover .tooltiptext {
@@ -308,7 +311,7 @@ input[type="checkbox"] {
   flex-basis: auto;
   align-self: auto;
   order: 0;
-  padding: 10px;
+  padding: 10px 10px 20px 10px;
   background-color: #eeeeee;
 }
 
@@ -849,6 +852,21 @@ body.dark-mode .settings-icon, body.dark-mode .telegram-icon {
 
 body.dark-mode .settings-icon:hover, body.dark-mode .telegram-icon:hover {
   color: #c8edce;
+}
+
+body.dark-mode .info-icon {
+  background:#94E5A0;
+  color:#232323;
+}
+
+body.dark-mode .info-icon:hover {
+  background:#c8edce;
+  color:#232323;
+}
+
+body.dark-mode .tooltiptext {
+  background:#283043;
+  color:#ffffff;
 }
 
 body.dark-mode h1 {
