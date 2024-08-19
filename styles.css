@@ -96,20 +96,17 @@ body.panel-open {
 }
 
 .info-icon {
-  padding:1px 4px 0 4px;
   margin-bottom:10px;
-  background-color:#2d4731;
   text-decoration: none;
-  color:#eeeeee;
+  color:#2d4731;
   cursor: pointer;
-  font-size:12px;
+  font-size: 21px;
   border-radius:4px;
   font-weight:bold;
 }
 
 .info-icon:hover {
-  background:#689f70;
-  color:#eeeeee;
+  color:#689f70;
 }
 
 .info-icon .tooltiptext {
@@ -871,13 +868,11 @@ body.dark-mode .settings-icon:hover, body.dark-mode .telegram-icon:hover {
 }
 
 body.dark-mode .info-icon {
-  background:#94E5A0;
-  color:#232323;
+  color:#94E5A0;
 }
 
 body.dark-mode .info-icon:hover {
-  background:#c8edce;
-  color:#232323;
+  color:#c8edce;
 }
 
 body.dark-mode .tooltiptext {
