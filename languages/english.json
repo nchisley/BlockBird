@@ -52,7 +52,7 @@
     "wallet_address": "Wallet Address",
     "tokens": "Tokens",
     "solana_tokens": "Solana Tokens",
-    "recent_tokens": "Five newest verified Solana tokens",
+    "recent_tokens": "Five newest Solana tokens verified by Jupiter",
     "loading": "Loading...",
     "failed_to_load": "Failed to load tokens."
 }

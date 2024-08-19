@@ -52,7 +52,7 @@
     "wallet_address": "钱包地址",
     "tokens": "代币",
     "solana_tokens": "Solana 代币",
-    "recent_tokens": "最新验证的五个 Solana 代币",
+    "recent_tokens": "由 Jupiter 验证的五个最新 Solana 代币",
     "loading": "加载中...",
     "failed_to_load": "无法加载代币。"
 }

@@ -52,7 +52,7 @@
     "wallet_address": "Dirección de Billetera",
     "tokens": "Tokens",
     "solana_tokens": "Tokens de Solana",
-    "recent_tokens": "Cinco tokens de Solana más recientemente verificados",
+    "recent_tokens": "Cinco tokens más recientes de Solana verificados por Jupiter",
     "loading": "Cargando...",
     "failed_to_load": "No se pudieron cargar los tokens."
 }

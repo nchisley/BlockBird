@@ -1,48 +1,62 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Wallets</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <script src="scripts.js" defer></script>
-  <script src="wallets.js"></script>
-  <script src="sortable.min.js"></script>
-</head>
-<body>
-  <div class="header">
-    <div id="header-container"></div>
-    <h1 data-translate="wallets">Wallets</h1>
-    <span class="info-icon tooltip">
-      INFO
-      <span class="tooltiptext" data-translate="wallet_help">
-        <h3 style="padding-bottom:10px;">Easily manage your crypto wallets for quick copy/paste!</h3>
-        <p>1. Add single wallets by entering a label and the wallet address. Then click the add button (+).</p>
-        <p>2. Add multiple wallets by clicking the import button and selecting a .CSV file with one "label,wallet address" per line.</p>
-        <p>3. Export your labeled wallet addresses by clicking the export button, slecting a location, naming the file, and clicking save.</p>
-        <p>4. Drag and drop your wallets to reorder them.</p>
-        <p>5. Click the copy button (<i class="fas fa-copy"></i>) to copy a wallet address for pasting.</p>
-        <p>6. Click the edit button (<i class="fas fa-edit"></i>) to change a wallet label or address.</p>
-        <p>7. Click the delete button (<i class="fas fa-trash-alt"></i>) to delete a wallet from your list.</p>
+  <head>
+    <title>Wallets</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="scripts.js" defer></script>
+    <script src="wallets.js"></script>
+    <script src="sortable.min.js"></script>
+  </head>
+  <body>
+
+    <!--HEADER-->
+    <div class="header">
+      <div id="header-container"></div>
+      <h1 data-translate="wallets">Wallets</h1>
+      <span class="info-icon tooltip">
+        INFO
+        <span class="tooltiptext">
+          <h3 data-translate="wallet_help">Easily manage your crypto wallets for quick copy/paste</h3>
+          <p>1. Add single wallets by entering a label and the wallet address. Then click the add button (+).</p>
+          <p>2. Add multiple wallets by clicking the import button and selecting a .CSV file with one "label,wallet address" per line.</p>
+          <p>3. Export your labeled wallet addresses by clicking the export button, slecting a location, naming the file, and clicking save.</p>
+          <p>4. Drag and drop your wallets to reorder them.</p>
+          <p>5. Click the copy button (<i class="fas fa-copy"></i>) to copy a wallet address for pasting.</p>
+          <p>6. Click the edit button (<i class="fas fa-edit"></i>) to change a wallet label or address.</p>
+          <p>7. Click the delete button (<i class="fas fa-trash-alt"></i>) to delete a wallet from your list.</p>
+        </span>
       </span>
-    </span>
-  </div>
-  <div class="wallets-head">
-    <div id="add-wallet-form">
-      <div class="import-export-group">
-        <button id="import-wallets-button" class="import-export" data-translate="import_csv">Import CSV</button>
-        <button id="export-wallets" class="import-export" data-translate="export_csv">Export CSV</button> 
-      </div>
-      <input type="text" id="wallet-label" placeholder="Label" data-translate="label">
-      <input type="text" id="wallet-address" placeholder="Wallet Address" data-translate="wallet_address">
-      <button id="add-wallet" title="Add Wallet"><i class="fas fa-plus"></i></button>
-      <input type="file" id="import-wallets" style="display:none;">
     </div>
-    <div id="alert-box" style="display: none;" class="alert-message"></div>
-  </div>
+    
+    <!--ADD/EDIT/IMPORT/EXPORT-->
+    <div class="wallets-head">
+      <div id="add-wallet-form">
+        <div class="import-export-group">
+          <button id="import-wallets-button" class="import-export" data-translate="import_csv">Import CSV</button>
+          <button id="export-wallets" class="import-export" data-translate="export_csv">Export CSV</button> 
+        </div>
+        <input type="text" id="wallet-label" placeholder="Label" data-translate="label">
+        <input type="text" id="wallet-address" placeholder="Wallet Address" data-translate="wallet_address">
+        <button id="add-wallet" title="Add Wallet"><i class="fas fa-plus"></i></button>
+        <input type="file" id="import-wallets" style="display:none;">
+      </div>
+      <div id="alert-box" style="display: none;" class="alert-message"></div>
+    </div>
+    
     <h3 data-translate="my_wallets">My Wallets</h3>
+
+    <!--SEARCH-->
+    <div class="wallets-search">
+      <input type="text" id="wallet-search" data-translate="wallets_search_placeholder" placeholder="Search wallets..." />
+    </div>
+
+    <!--WALLETS-->
     <div class="content my-wallets" id="wallet-list"></div>
-  <div class="footer">
-    <div id="nav-container"></div>
-  </div>
-</body>
+    
+    <!--FOOTER NAV-->
+    <div class="footer">
+      <div id="nav-container"></div>
+    </div>
+  </body>
 </html>

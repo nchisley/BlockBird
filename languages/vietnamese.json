@@ -52,7 +52,7 @@
     "wallet_address": "Địa chỉ ví",
     "tokens": "Token",
     "solana_tokens": "Token Solana",
-    "recent_tokens": "Năm token Solana mới nhất đã được xác minh",
+    "recent_tokens": "Năm token Solana mới nhất được Jupiter xác minh",
     "loading": "Đang tải...",
     "failed_to_load": "Không tải được token."
 }

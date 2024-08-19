@@ -40,6 +40,7 @@ body {
   align-content: stretch;
   padding: 0;
   margin: 0;
+  cursor:default;
 }
 
 body.panel-open {
@@ -95,7 +96,7 @@ body.panel-open {
 }
 
 .info-icon {
-  padding:1px 4px;
+  padding:1px 4px 0 4px;
   margin-bottom:10px;
   background-color:#2d4731;
   text-decoration: none;
@@ -120,6 +121,7 @@ body.panel-open {
   text-align:left;
   font-size:14px;
   text-wrap:wrap;
+  font-weight:normal;
 }
 
 .tooltiptext {
@@ -187,28 +189,32 @@ h1 {
   margin:0;
   width:100%;
   color:#1d1d1d;
-  height:40px;
 }
 
 h2 {
   font-size: 24px;
   width:100%;
   margin:0;
-  height:35px;
 }
 
 h3 {
   font-size: 16px;
   width:100%;
-  margin:0;
-  height:30px;
+  margin:0 0 10px 0;
 }
 
 h4 {
   font-size: 12px;
   width:100%;
   margin:0;
-  height:24px;
+}
+
+.header h1 {
+  height:40px;
+}
+
+.header h2 {
+  height:35px;
 }
 
 button {
@@ -671,13 +677,23 @@ button.edit-delete {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   column-gap: 4px;
 }
 
 button.import-export {
   padding:5px;
   font-size:12px;
+}
+
+.wallets-search {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+  padding: 0 10px 10px 10px;
 }
 
 .my-wallets {

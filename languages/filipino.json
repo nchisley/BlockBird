@@ -52,7 +52,7 @@
     "wallet_address": "Address ng Wallet",
     "tokens": "Mga Token",
     "solana_tokens": "Mga Token ng Solana",
-    "recent_tokens": "Limang pinakabagong napatunayan na mga token ng Solana",
+    "recent_tokens": "Limang pinakabagong Solana tokens na na-verify ng Jupiter",
     "loading": "Naglo-load...",
     "failed_to_load": "Nabigong i-load ang mga token."
 }

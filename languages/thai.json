@@ -52,7 +52,7 @@
     "wallet_address": "ที่อยู่กระเป๋าเงิน",
     "tokens": "โทเค็น",
     "solana_tokens": "โทเค็น Solana",
-    "recent_tokens": "โทเค็น Solana ที่ตรวจสอบแล้วใหม่ล่าสุด 5 รายการ",
+    "recent_tokens": "โทเค็น Solana ใหม่ล่าสุดห้ารายการที่ตรวจสอบโดย Jupiter",
     "loading": "กำลังโหลด...",
     "failed_to_load": "ไม่สามารถโหลดโทเค็นได้"
 }

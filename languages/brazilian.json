@@ -50,7 +50,7 @@
     "wallet_address": "Endereço da Carteira",
     "tokens": "Tokens",
     "solana_tokens": "Tokens Solana",
-    "recent_tokens": "Cinco tokens Solana mais recentes verificados",
+    "recent_tokens": "Cinco tokens mais recentes do Solana verificados pela Jupiter",
     "loading": "Carregando...",
     "failed_to_load": "Falha ao carregar tokens."
 }

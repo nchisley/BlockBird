@@ -52,7 +52,7 @@
     "wallet_address": "Адреса гаманця",
     "tokens": "Токени",
     "solana_tokens": "Токени Solana",
-    "recent_tokens": "П'ять останніх підтверджених токенів Solana",
+    "recent_tokens": "П'ять найновіших токенів Solana, перевірених Jupiter",
     "loading": "Завантаження...",
     "failed_to_load": "Не вдалося завантажити токени."
 }

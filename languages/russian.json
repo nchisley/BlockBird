@@ -52,7 +52,7 @@
     "wallet_address": "Адрес кошелька",
     "tokens": "Токены",
     "solana_tokens": "Токены Solana",
-    "recent_tokens": "Пять последних проверенных токенов Solana",
+    "recent_tokens": "Пять новейших токенов Solana, проверенных Jupiter",
     "loading": "Загрузка...",
     "failed_to_load": "Не удалось загрузить токены."
 }
