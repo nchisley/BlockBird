@@ -56,5 +56,9 @@
     "solana_tokens": "Token Solana",
     "recent_tokens": "Sabbin token guda biyar na Solana da aka tabbatar da su ta Jupiter",
     "loading": "Ana loda...",
-    "failed_to_load": "An kasa loda token."
+    "failed_to_load": "An kasa loda token.",
+    "token_info": "Token: Sabbin token guda goma na Solana waɗanda Jupiter ta tabbatar",
+    "lst_info": "LST: Duk LSTs (Liquid Staking Tokens) da Sanctum ta jera",
+    "token_tab": "Token",
+    "lst_tab": "LST"
 }

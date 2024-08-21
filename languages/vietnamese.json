@@ -56,5 +56,9 @@
     "solana_tokens": "Token Solana",
     "recent_tokens": "Năm token Solana mới nhất được Jupiter xác minh",
     "loading": "Đang tải...",
-    "failed_to_load": "Không tải được token."
+    "failed_to_load": "Không tải được token.",
+    "token_info": "Token: Mười token Solana mới nhất được Jupiter xác minh",
+    "lst_info": "LST: Tất cả các LST (Liquid Staking Tokens) được liệt kê bởi Sanctum",
+    "token_tab": "Token",
+    "lst_tab": "LST"
 }

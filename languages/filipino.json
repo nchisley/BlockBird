@@ -56,5 +56,9 @@
     "solana_tokens": "Mga Token ng Solana",
     "recent_tokens": "Limang pinakabagong Solana tokens na na-verify ng Jupiter",
     "loading": "Naglo-load...",
-    "failed_to_load": "Nabigong i-load ang mga token."
+    "failed_to_load": "Nabigong i-load ang mga token.",
+    "token_info": "Token: Sampung pinakabagong mga token ng Solana na napatunayan ni Jupiter",
+    "lst_info": "LST: Lahat ng LST (Liquid Staking Tokens) na nakalista ng Sanctum",
+    "token_tab": "Token",
+    "lst_tab": "LST"
 }

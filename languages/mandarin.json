@@ -56,5 +56,9 @@
     "solana_tokens": "Solana 代币",
     "recent_tokens": "由 Jupiter 验证的五个最新 Solana 代币",
     "loading": "加载中...",
-    "failed_to_load": "无法加载代币。"
+    "failed_to_load": "无法加载代币。",
+    "token_info": "代币: 由Jupiter验证的十个最新的Solana代币",
+    "lst_info": "LST: Sanctum列出的所有LST（液体质押代币）",
+    "token_tab": "代币",
+    "lst_tab": "LST"
 }

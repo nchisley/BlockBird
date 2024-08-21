@@ -64,7 +64,7 @@ BlockBird is a comprehensive Chrome extension that offers a suite of tools for b
 - `scanner.html`, `scanner.js`: Scanner feature implementation.
 - `explorers.html`, `explorers.js`: Blockchain explorers feature implementation.
 - `wallets.html`, `wallets.js`: Wallet management feature implementation.
-- `solana-tokens.html`, `solana-tokens.js`: Solana tokens feature implementation.
+- `tokens.html`, `solana-tokens.js`: Solana tokens feature implementation.
 - `settings.html`, `settings.js`: Settings page implementation.
 - `styles.css`: Shared styles for the extension.
 - `include-links.js`: Script to populate navigation links.

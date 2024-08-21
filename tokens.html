@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Solana Tokens</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="scripts.js" defer></script>
+  <script src="solana-tokens.js"></script>
+  <script src="lsts.js"></script>
+</head>
+<body>
+  <div class="header">
+    <div id="header-container"></div>
+    <h1 data-translate="solana_tokens">Solana Tokens</h1>
+    <span class="info-icon tooltip">
+      <i class="fas fa-info-circle"></i>
+      <span class="tooltiptext" data-translate="tokens_help">
+        <h3 style="text-align:center;" data-translate="token_info">Token: Ten newest Solana tokens verified by Jupiter</h3>
+        <h3 style="text-align:center;" data-translate="lst_info">LST: All LSTs (Liquid Staking Tokens) listed by Sanctum</h3>
+      </span>
+    </span>
+  </div>
+  <div id="tabs" class="tabs">
+    <button id="solanaTokensTab" class="tablink" data-translate="token_tab">Token</button>
+    <button id="sanctumLSTsTab" class="tablink" data-translate="lst_tab">LST</button>
+  </div>
+  <div id="SolanaTokens" class="content tokens-content tabcontent">
+    <h4 style="text-align:center;margin-bottom:10px;">Provided by <a href="https://jup.ag" target="_blank">Jupiter</a></h4>
+    <div id="loading" data-translate="loading">Loading...</div>
+    <div id="token-list" class="flex-list"></div>
+  </div>
+  <div id="SanctumLSTs" class="content tokens-content tabcontent">
+    <h4 style="text-align:center;margin-bottom:10px;">Provided by <a href="https://app.sanctum.so" target="_blank">Sanctum</a></h4>
+    <div id="lst-loading" data-translate="loading">Loading...</div>
+    <div id="lst-token-list" class="flex-list"></div>
+  </div>
+  <div class="footer">
+    <div id="nav-container"></div>
+  </div>
+</body>
+</html>

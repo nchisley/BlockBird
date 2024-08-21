@@ -21,13 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
       tokenListContainer.innerHTML = '';
   
       // Only display the most recent 8 tokens
-      const recentTokens = tokens.slice(0, 5);
+      const recentTokens = tokens.slice(0, 10);
       recentTokens.forEach(token => {
         const tokenItem = document.createElement('div');
         tokenItem.className = 'list-item';
         tokenItem.innerHTML = `
           <div><b>${token.name}</b> (${token.symbol})</div>
-          <div>${token.address}</div>
+          <div class="token-address">${token.address}</div>
           <div>MC: ${token.marketCap || 'N/A'}</div>
         `;
         tokenListContainer.appendChild(tokenItem);

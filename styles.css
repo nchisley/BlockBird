@@ -299,10 +299,12 @@ input[type="checkbox"] {
   font-size:18px;
 }
 
-#loading {
+#loading,
+#lst-loading {
   margin-top:20px;
   margin-bottom:20px;
   width:100%;
+  text-align:center;
 }
 
 /*HEADER*/
@@ -362,7 +364,8 @@ input[type="checkbox"] {
   gap:4px;
 }
 
-.nav-list-item {
+.nav-list-item,
+.tab-list-item {
   display:flex;
   flex-direction:column;
   flex-grow:1;
@@ -426,8 +429,7 @@ input[type="checkbox"] {
 
 .ads {
   display: block;
-  flex-grow: 0;
-  flex-shrink: 1;
+  flex-grow: 1;
   flex-basis: auto;
   align-self: auto;
   order: 0;
@@ -738,12 +740,15 @@ button.import-export {
 /***TOKENS***/
 
 .tokens-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
+  background-color:#cacaca;
+  margin:0 10px 10px 10px;
+  text-align:left;
+  font-size:14px;
+  overflow-y: scroll;
+  padding: 8px 8px 0 8px;
+  background-color: #cacaca;
+  color:#151515;
   flex-grow: 1;
-  justify-content: center;
 }
 
 .flex-list {
@@ -756,7 +761,7 @@ button.import-export {
 
 .flex-list .list-item {
   background-color: #c8edce;
-  padding: 10px;
+  padding: 20px 10px;
   border-radius: 4px;
   text-align: center;
   color: #1d1d1d;
@@ -777,6 +782,55 @@ button.import-export {
 
 .flex-list .list-item div:last-child {
   margin-bottom: 0;
+}
+
+.tabs {
+  display: flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  justify-content:center;
+  order: 0;
+  padding: 10px;
+  gap:4px;
+}
+
+.tabcontent {
+  display: none;
+  padding: 10px;
+}
+
+.tokens-content ul {
+  list-style:none;
+}
+
+.token-logo {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+}
+
+.token-address {
+  font-size:12px;
+}
+
+.tablink {
+  padding:5px 10px 4px 10px;
+}
+
+.tablink.active,
+.tablink.active:hover {
+  background-color: #ffffff;
+  cursor: default;
+  color: #1d1d1d;
+}
+
+.tablink.active:disabled {
+  cursor: not-allowed;
 }
 
 /***PAY***/
@@ -902,6 +956,12 @@ body.dark-mode .flex-list .list-item:hover {
   background-color: #132415;
 }
 
+body.dark-mode .tablink.active,
+body.dark-mode .tablink.active:hover {
+  background-color: #303030;
+  color: #ffffff;
+}
+
 body.dark-mode .nav-list-item {
   background-color: #2d4731;
   color:#c8edce;
@@ -916,7 +976,8 @@ body.dark-mode .nav-list-item.current-page {
   cursor:unset;
 }
 
-body.dark-mode #wallet-list {
+body.dark-mode .my-wallets,
+body.dark-mode .tokens-content {
   background-color: #151515;
   color:#cacaca;
 }

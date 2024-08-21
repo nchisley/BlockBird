@@ -56,5 +56,9 @@
     "solana_tokens": "โทเค็น Solana",
     "recent_tokens": "โทเค็น Solana ใหม่ล่าสุดห้ารายการที่ตรวจสอบโดย Jupiter",
     "loading": "กำลังโหลด...",
-    "failed_to_load": "ไม่สามารถโหลดโทเค็นได้"
+    "failed_to_load": "ไม่สามารถโหลดโทเค็นได้",
+    "token_info": "โทเค็น: โทเค็น Solana ใหม่สิบโทเค็นที่ได้รับการยืนยันโดย Jupiter",
+    "lst_info": "LST: LST ทั้งหมด (โทเค็นการวางเดิมพันแบบน้ำ) ที่ระบุโดย Sanctum",
+    "token_tab": "โทเค็น",
+    "lst_tab": "LST"
 }

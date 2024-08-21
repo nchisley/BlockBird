@@ -56,5 +56,9 @@
     "solana_tokens": "Tokens de Solana",
     "recent_tokens": "Cinco tokens más recientes de Solana verificados por Jupiter",
     "loading": "Cargando...",
-    "failed_to_load": "No se pudieron cargar los tokens."
+    "failed_to_load": "No se pudieron cargar los tokens.",
+    "token_info": "Token: Diez nuevos tokens de Solana verificados por Jupiter",
+    "lst_info": "LST: Todos los LST (Liquid Staking Tokens) listados por Sanctum",
+    "token_tab": "Token",
+    "lst_tab": "LST"
 }

@@ -56,5 +56,9 @@
     "solana_tokens": "Токены Solana",
     "recent_tokens": "Пять новейших токенов Solana, проверенных Jupiter",
     "loading": "Загрузка...",
-    "failed_to_load": "Не удалось загрузить токены."
+    "failed_to_load": "Не удалось загрузить токены.",
+    "token_info": "Токен: Десять новых токенов Solana, проверенных Jupiter",
+    "lst_info": "LST: Все LST (жидкие стейкинг токены), перечисленные Sanctum",
+    "token_tab": "Токен",
+    "lst_tab": "LST"
 }
