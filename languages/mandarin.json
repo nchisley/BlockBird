@@ -60,5 +60,10 @@
     "token_info": "代币: 由Jupiter验证的十个最新的Solana代币",
     "lst_info": "LST: Sanctum列出的所有LST（液体质押代币）",
     "token_tab": "代币",
-    "lst_tab": "LST"
+    "lst_tab": "LST",
+    "token_disclaimer": "我们与Solana、Jupiter或Sanctum无关。",
+    "search_sol_tokens": "搜索所有Solana代币...",
+    "search_sanctum_lsts": "搜索所有Sanctum LSTs...",
+    "powered_by_jupiter": "由Jupiter提供支持",
+    "powered_by_sanctum": "由Sanctum提供支持"
 }

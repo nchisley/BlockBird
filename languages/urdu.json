@@ -60,5 +60,10 @@
     "token_info": "ٹوکین: دس نئے سولانا ٹوکین جن کی تصدیق جیوپیٹر نے کی ہے",
     "lst_info": "ایل ایس ٹی: تمام ایل ایس ٹیز (لیکویڈ اسٹیکنگ ٹوکین) جو سینکچم نے درج کیے ہیں",
     "token_tab": "ٹوکین",
-    "lst_tab": "ایل ایس ٹی"
+    "lst_tab": "ایل ایس ٹی",
+    "token_disclaimer": "ہم Solana, Jupiter، یا Sanctum کے ساتھ وابستہ نہیں ہیں۔",
+    "search_sol_tokens": "تمام Solana ٹوکنز تلاش کریں...",
+    "search_sanctum_lsts": "تمام Sanctum LSTs تلاش کریں...",
+    "powered_by_jupiter": "Jupiter کے ذریعے چلتا ہے",
+    "powered_by_sanctum": "Sanctum کے ذریعے چلتا ہے"
 }

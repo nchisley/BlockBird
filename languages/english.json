@@ -61,5 +61,9 @@
     "lst_info": "LST: All LSTs (Liquid Staking Tokens) listed by Sanctum.",
     "token_tab": "Token",
     "lst_tab": "LST",
-    "token_disclaimer": "We are not affiliated with Solana, Jupiter, or Sanctum."
+    "token_disclaimer": "We are not affiliated with Solana, Jupiter, or Sanctum.",
+    "search_sol_tokens": "Search all Solana Tokens...",
+    "search_sanctum_lsts": "Search all Sanctum LSTs...",
+    "powered_by_jupiter": "Powered by Jupiter",
+    "powered_by_sanctum": "Powered by Sanctum"
 }

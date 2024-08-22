@@ -58,5 +58,10 @@
     "token_info": "Token: Dez novos tokens Solana verificados por Jupiter",
     "lst_info": "LST: Todos os LSTs (Tokens de Staking Líquido) listados por Sanctum",
     "token_tab": "Token",
-    "lst_tab": "LST"
+    "lst_tab": "LST",
+    "token_disclaimer": "Não somos afiliados à Solana, Jupiter ou Sanctum.",
+    "search_sol_tokens": "Pesquisar todos os Tokens Solana...",
+    "search_sanctum_lsts": "Pesquisar todos os LSTs do Sanctum...",
+    "powered_by_jupiter": "Desenvolvido por Jupiter",
+    "powered_by_sanctum": "Desenvolvido por Sanctum"
 }

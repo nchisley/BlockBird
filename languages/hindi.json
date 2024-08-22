@@ -60,5 +60,10 @@
     "token_info": "टोकन: जुपिटर द्वारा सत्यापित दस नवीनतम सोलाना टोकन",
     "lst_info": "एलएसटी: सैंक्टम द्वारा सूचीबद्ध सभी एलएसटी (लिक्विड स्टेकिंग टोकन)",
     "token_tab": "टोकन",
-    "lst_tab": "एलएसटी"
+    "lst_tab": "एलएसटी",
+    "token_disclaimer": "हम Solana, Jupiter, या Sanctum से संबद्ध नहीं हैं।",
+    "search_sol_tokens": "सभी Solana टोकन खोजें...",
+    "search_sanctum_lsts": "सभी Sanctum LSTs खोजें...",
+    "powered_by_jupiter": "Jupiter द्वारा संचालित",
+    "powered_by_sanctum": "Sanctum द्वारा संचालित"
 }

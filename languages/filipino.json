@@ -60,5 +60,10 @@
     "token_info": "Token: Sampung pinakabagong mga token ng Solana na napatunayan ni Jupiter",
     "lst_info": "LST: Lahat ng LST (Liquid Staking Tokens) na nakalista ng Sanctum",
     "token_tab": "Token",
-    "lst_tab": "LST"
+    "lst_tab": "LST",
+    "token_disclaimer": "Hindi kami kaanib ng Solana, Jupiter, o Sanctum.",
+    "search_sol_tokens": "Hanapin ang lahat ng Solana Tokens...",
+    "search_sanctum_lsts": "Hanapin ang lahat ng Sanctum LSTs...",
+    "powered_by_jupiter": "Pinapagana ng Jupiter",
+    "powered_by_sanctum": "Pinapagana ng Sanctum"
 }

@@ -60,5 +60,10 @@
     "token_info": "Token: Mười token Solana mới nhất được Jupiter xác minh",
     "lst_info": "LST: Tất cả các LST (Liquid Staking Tokens) được liệt kê bởi Sanctum",
     "token_tab": "Token",
-    "lst_tab": "LST"
+    "lst_tab": "LST",
+    "token_disclaimer": "Chúng tôi không liên kết với Solana, Jupiter hoặc Sanctum.",
+    "search_sol_tokens": "Tìm kiếm tất cả Solana Tokens...",
+    "search_sanctum_lsts": "Tìm kiếm tất cả Sanctum LSTs...",
+    "powered_by_jupiter": "Được hỗ trợ bởi Jupiter",
+    "powered_by_sanctum": "Được hỗ trợ bởi Sanctum"
 }

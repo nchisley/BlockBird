@@ -60,5 +60,10 @@
     "token_info": "Токен: Десять нових токенів Solana, перевірених Jupiter",
     "lst_info": "LST: Всі LST (рідкі токени для стейкінгу), перелічені Sanctum",
     "token_tab": "Токен",
-    "lst_tab": "LST"
+    "lst_tab": "LST",
+    "token_disclaimer": "Ми не афілійовані з Solana, Jupiter або Sanctum.",
+    "search_sol_tokens": "Шукати всі токени Solana...",
+    "search_sanctum_lsts": "Шукати всі LSTs Sanctum...",
+    "powered_by_jupiter": "Підтримується Jupiter",
+    "powered_by_sanctum": "Підтримується Sanctum"
 }

@@ -60,5 +60,10 @@
     "token_info": "โทเค็น: โทเค็น Solana ใหม่สิบโทเค็นที่ได้รับการยืนยันโดย Jupiter",
     "lst_info": "LST: LST ทั้งหมด (โทเค็นการวางเดิมพันแบบน้ำ) ที่ระบุโดย Sanctum",
     "token_tab": "โทเค็น",
-    "lst_tab": "LST"
+    "lst_tab": "LST",
+    "token_disclaimer": "เราไม่ได้เป็นพันธมิตรกับ Solana, Jupiter หรือ Sanctum.",
+    "search_sol_tokens": "ค้นหา Solana Tokens ทั้งหมด...",
+    "search_sanctum_lsts": "ค้นหา Sanctum LSTs ทั้งหมด...",
+    "powered_by_jupiter": "ขับเคลื่อนโดย Jupiter",
+    "powered_by_sanctum": "ขับเคลื่อนโดย Sanctum"
 }

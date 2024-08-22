@@ -60,5 +60,10 @@
     "token_info": "Token: Sabbin token guda goma na Solana waɗanda Jupiter ta tabbatar",
     "lst_info": "LST: Duk LSTs (Liquid Staking Tokens) da Sanctum ta jera",
     "token_tab": "Token",
-    "lst_tab": "LST"
+    "lst_tab": "LST",
+    "token_disclaimer": "Ba mu da alaƙa da Solana, Jupiter, ko Sanctum.",
+    "search_sol_tokens": "Bincika dukkan Solana Tokens...",
+    "search_sanctum_lsts": "Bincika dukkan LSTs na Sanctum...",
+    "powered_by_jupiter": "Ƙarfafa ta Jupiter",
+    "powered_by_sanctum": "Ƙarfafa ta Sanctum"
 }
