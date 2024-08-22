@@ -51,7 +51,7 @@ body.panel-open {
 
 ::-webkit-scrollbar {
   width:10px;
-  background-color:#cacaca;
+  background-color:#eeeeee;
 }
 
 ::-webkit-scrollbar-button {
@@ -116,9 +116,15 @@ body.panel-open {
   width:384px;
   padding:15px 20px 5px 20px;
   text-align:left;
-  font-size:14px;
+  font-size:12px;
   text-wrap:wrap;
   font-weight:normal;
+}
+
+.info-icon .tooltiptext p {
+  width:100%;
+  text-align:center;
+  margin:0 0 10px 0;
 }
 
 .tooltiptext {
@@ -316,7 +322,7 @@ input[type="checkbox"] {
   flex-basis: auto;
   align-self: auto;
   order: 0;
-  padding: 10px 10px 20px 10px;
+  padding: 10px 10px 15px 10px;
   background-color: #eeeeee;
 }
 
@@ -772,8 +778,8 @@ button.import-export {
 }
 
 .flex-list .list-item:hover {
-  background-color: #c8edce;
-  cursor: default;
+  background-color: #94E5A0;
+  cursor: pointer;
 }
 
 .flex-list .list-item div {
@@ -782,6 +788,12 @@ button.import-export {
 
 .flex-list .list-item div:last-child {
   margin-bottom: 0;
+}
+
+#tabSelector {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
 }
 
 .tabs {
@@ -833,6 +845,23 @@ button.import-export {
   cursor: not-allowed;
 }
 
+#token-search-container,
+#lst-search-container {
+  display: flex;
+  flex-grow: 0;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+  padding: 0 10px 10px 10px;
+}
+
+#token-search,
+#lst-search {
+    margin-top: 10px;
+}
+
 /***PAY***/
 
 .description {
@@ -880,7 +909,7 @@ body.dark-mode .updates {
 
 body.dark-mode ::-webkit-scrollbar {
   width:10px;
-  background-color:#151515;
+  background-color:#1d1d1d;
 }
 body.dark-mode ::-webkit-scrollbar-button {
   display:none;
@@ -897,14 +926,15 @@ body.dark-mode .footer {
   background-color:#303030;
 }
 
-body.dark-mode input, 
-body.dark-mode .settings-select {
+body.dark-mode input,
+body.dark-mode select {
   background-color: #151515;
   color: #ffffff;
   border: 1px solid #151515;
 }
 
-body.dark-mode input:focus, body.dark-mode .settings-select:focus {
+body.dark-mode input:focus,
+body.dark-mode select:focus {
   border: 1px solid #94E5A0;
   outline:0;
 }
@@ -913,11 +943,13 @@ body.dark-mode button:hover {
   background-color: #689f70;
 }
 
-body.dark-mode .settings-icon, body.dark-mode .telegram-icon {
+body.dark-mode .settings-icon,
+body.dark-mode .telegram-icon {
   color: #94E5A0;
 }
 
-body.dark-mode .settings-icon:hover, body.dark-mode .telegram-icon:hover {
+body.dark-mode .settings-icon:hover,
+body.dark-mode .telegram-icon:hover {
   color: #c8edce;
 }
 
@@ -953,7 +985,7 @@ body.dark-mode .list-item:hover {
 }
 
 body.dark-mode .flex-list .list-item:hover {
-  background-color: #132415;
+  background-color: #37523c;
 }
 
 body.dark-mode .tablink.active,

@@ -15,25 +15,44 @@
     <span class="info-icon tooltip">
       <i class="fas fa-info-circle"></i>
       <span class="tooltiptext" data-translate="tokens_help">
-        <h3 style="text-align:center;" data-translate="token_info">Token: Ten newest Solana tokens verified by Jupiter</h3>
-        <h3 style="text-align:center;" data-translate="lst_info">LST: All LSTs (Liquid Staking Tokens) listed by Sanctum</h3>
+        <p data-translate="token_info">Token: Ten newest tradeable Solana tokens verified by Jupiter are loaded. Use the search to find other Solana tokens.</p>
+        <p data-translate="lst_info"><b>LST:</b> All LSTs (Liquid Staking Tokens) listed by Sanctum.</p>
       </span>
     </span>
   </div>
+
+  <!--Tab Select-->
   <div id="tabs" class="tabs">
-    <button id="solanaTokensTab" class="tablink" data-translate="token_tab">Token</button>
-    <button id="sanctumLSTsTab" class="tablink" data-translate="lst_tab">LST</button>
+    <select id="tabSelector">
+      <option value="SolanaTokens" data-translate="token_tab">Token</option>
+      <option value="SanctumLSTs" data-translate="lst_tab">LST</option>
+    </select>
   </div>
+
+  <!--Token Search-->
+  <div id="token-search-container" class="token-search" style="display: none;">
+    <h4>Powered by <a href="https://jup.ag" target="_blank">Jupiter</a></h4>
+    <input type="text" id="token-search" placeholder="Search all Solana Tokens..." />
+  </div>
+
+  <!--LST Search-->
+  <div id="lst-search-container" class="token-search" style="display:none;">
+    <h4>Powered by <a href="https://app.sanctum.so" target="_blank">Sanctum</a></h4>
+    <input type="text" id="lst-search" placeholder="Search all Sanctum LSTs..." />
+  </div>
+
+  <!--Token Content-->
   <div id="SolanaTokens" class="content tokens-content tabcontent">
-    <h4 style="text-align:center;margin-bottom:10px;">Provided by <a href="https://jup.ag" target="_blank">Jupiter</a></h4>
     <div id="loading" data-translate="loading">Loading...</div>
     <div id="token-list" class="flex-list"></div>
   </div>
+
+  <!--LST Content-->
   <div id="SanctumLSTs" class="content tokens-content tabcontent">
-    <h4 style="text-align:center;margin-bottom:10px;">Provided by <a href="https://app.sanctum.so" target="_blank">Sanctum</a></h4>
     <div id="lst-loading" data-translate="loading">Loading...</div>
     <div id="lst-token-list" class="flex-list"></div>
   </div>
+
   <div class="footer">
     <div id="nav-container"></div>
   </div>

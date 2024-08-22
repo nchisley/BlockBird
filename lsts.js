@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const sanctumLSTUrl = 'https://raw.githubusercontent.com/igneous-labs/sanctum-lst-list/master/sanctum-lst-list.toml';
     const lstTokenListContainer = document.getElementById('lst-token-list');
     const lstLoadingIndicator = document.getElementById('lst-loading');
+    const lstSearchInput = document.getElementById('lst-search');
+    const tokenSearchContainer = document.getElementById('token-search-container');
+    const lstSearchContainer = document.getElementById('lst-search-container');
+    const tabSelector = document.getElementById('tabSelector');
+    let lstList = [];
 
     async function fetchSanctumLSTList() {
         try {
@@ -12,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            const data = response.text();
-            const lstList = parseTOML(await data);
+            const data = await response.text();
+            lstList = parseTOML(data);
             displayLSTList(lstList);
         } catch (error) {
             console.error('Error fetching Sanctum LST List:', error);
@@ -25,25 +30,30 @@ document.addEventListener('DOMContentLoaded', function () {
         lstLoadingIndicator.style.display = 'none';  // Hide loading indicator
         lstTokenListContainer.innerHTML = '';  // Clear any existing content
         lstTokenListContainer.style.display = 'flex';  // Show the list container
-
+    
         lstList.forEach(item => {
-            const tokenItem = document.createElement('div');
+            const solscanUrl = `https://solscan.io/token/${item.mint}`;
+    
+            const tokenItem = document.createElement('a');
             tokenItem.className = 'list-item';
-
+            tokenItem.href = solscanUrl;
+            tokenItem.target = '_blank';  // Open in a new tab
+            tokenItem.style.textDecoration = 'none';  // Remove underline from the link
+    
             const logo = document.createElement('img');
             logo.src = item.logo_uri;
             logo.alt = `${item.name} logo`;
             logo.className = 'token-logo';
-
+    
             const textContent = document.createElement('div');
             textContent.innerHTML = `<b>${item.name}</b> (${item.symbol})`;
-
+    
             tokenItem.appendChild(logo);
             tokenItem.appendChild(textContent);
-
+    
             lstTokenListContainer.appendChild(tokenItem);
         });
-    }
+    }    
 
     function parseTOML(data) {
         const items = [];
@@ -66,37 +76,45 @@ document.addEventListener('DOMContentLoaded', function () {
             items.push(currentItem);
         }
 
-        return items.filter(item => item.name && item.symbol);
+        return items.filter(item => item.name && item.symbol && item.mint);
     }
 
-    function openTab(evt, tabName) {
+    function openTab(tabName) {
         const tabcontent = document.getElementsByClassName("tabcontent");
         for (let i = 0; i < tabcontent.length; i++) {
             tabcontent[i].style.display = "none";
         }
-        
-        const tablinks = document.getElementsByClassName("tablink");
-        for (let i = 0; i < tablinks.length; i++) {
-            tablinks[i].classList.remove("active");
-        }
 
         document.getElementById(tabName).style.display = "block";
-        evt.currentTarget.classList.add("active");
-        
+
+        // Toggle the search input visibility
         if (tabName === "SanctumLSTs") {
+            lstSearchContainer.style.display = 'flex';
+            tokenSearchContainer.style.display = 'none';
             fetchSanctumLSTList();
+        } else {
+            lstSearchContainer.style.display = 'none';
+            tokenSearchContainer.style.display = 'flex';
         }
     }
 
-    // Attach event listeners to the tab buttons
-    document.getElementById('solanaTokensTab').addEventListener('click', function(event) {
-        openTab(event, 'SolanaTokens');
-    });
-    
-    document.getElementById('sanctumLSTsTab').addEventListener('click', function(event) {
-        openTab(event, 'SanctumLSTs');
+    function filterLSTs() {
+        const searchTerm = lstSearchInput.value.toLowerCase();
+        const filteredList = lstList.filter(item => 
+            item.name.toLowerCase().includes(searchTerm) || 
+            item.symbol.toLowerCase().includes(searchTerm)
+        );
+        displayLSTList(filteredList);
+    }
+
+    // Attach event listener for tab selection
+    tabSelector.addEventListener('change', function () {
+        openTab(tabSelector.value);
     });
 
+    // Attach event listener for search
+    lstSearchInput.addEventListener('input', filterLSTs);
+
     // Set default tab open
-    document.getElementById('solanaTokensTab').click();
+    openTab(tabSelector.value);
 });

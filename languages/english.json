@@ -11,7 +11,7 @@
     "info": "INFO",
     "dashboard_description": "Blockchain | Web3 | Crypto",
     "setup_blockbird": "Click here to set up your BlockBird",
-    "updates": "Visit the changelog to see the most recent updates.",
+    "updates": "Visit our changelog to see the most recent updates.",
     "version": "Version",
     "wallet_maintenance_buttons": "Wallet maintenance buttons are now icons.",
     "drag_drop_wallet_order": "Added drag-n-drop to arrange wallet order.",
@@ -57,8 +57,8 @@
     "recent_tokens": "Five newest Solana tokens verified by Jupiter",
     "loading": "Loading...",
     "failed_to_load": "Failed to load tokens.",
-    "token_info": "Token: Ten newest Solana tokens verified by Jupiter",
-    "lst_info": "LST: All LSTs (Liquid Staking Tokens) listed by Sanctum",
+    "token_info": "Token: Ten newest Solana tokens verified by Jupiter are loaded. Use the search to find other Solana tokens.",
+    "lst_info": "LST: All LSTs (Liquid Staking Tokens) listed by Sanctum.",
     "token_tab": "Token",
     "lst_tab": "LST"
 }
