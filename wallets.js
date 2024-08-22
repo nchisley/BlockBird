@@ -91,8 +91,8 @@ document.addEventListener('DOMContentLoaded', function() {
             } else if (wallets.some(wallet => wallet?.address === address)) {
                 showAlert('This address has already been added.', 'negative');
                 return;
-            } else if (wallets.length >= 1000) {
-                showAlert('You have reached the limit of 1000 wallets.', 'negative');
+            } else if (wallets.length >= 100) {
+                showAlert('You have reached the limit of 100 wallets.', 'negative');
                 return;
             } else {
                 // Add new wallet to the beginning of the array
@@ -200,8 +200,8 @@ document.addEventListener('DOMContentLoaded', function() {
             try {
                 const content = e.target.result;
                 const lines = content.split('\n').filter(line => line.trim() !== '');
-                // Limit the number of lines to 1000
-                const limitedLines = lines.slice(0, 1000);
+                // Limit the number of lines to 100
+                const limitedLines = lines.slice(0, 100);
                 
                 const newWallets = limitedLines.map(line => {
                     const [label, address] = line.split(',').map(s => s.trim());
@@ -220,9 +220,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     );
                     
                     // Check if we've reached the limit after adding new wallets
-                    if (existingWallets.length + addedWallets.length > 1000) {
-                        showAlert('You have reached the limit of 1000 wallets.', 'negative');
-                        addedWallets.length = 1000 - existingWallets.length;
+                    if (existingWallets.length + addedWallets.length > 100) {
+                        showAlert('You have reached the limit of 100 wallets.', 'negative');
+                        addedWallets.length = 100 - existingWallets.length;
                     }
     
                     existingWallets = [...existingWallets, ...addedWallets];
