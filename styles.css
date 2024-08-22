@@ -127,6 +127,11 @@ body.panel-open {
   margin:0 0 10px 0;
 }
 
+.tooltiptext .disclaimer {
+  font-size:11px;
+  font-style:italic;
+}
+
 .tooltiptext {
   visibility: hidden;
   position:absolute;
