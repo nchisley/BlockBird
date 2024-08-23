@@ -33,12 +33,11 @@ document.addEventListener('DOMContentLoaded', function () {
     
         lstList.forEach(item => {
             const solscanUrl = `https://solscan.io/token/${item.mint}`;
+            const sanctumTradeUrl = `https://app.sanctum.so/trade/SOL-${item.symbol}`;
+            const jupiterSwapUrl = `https://jup.ag/swap/SOL-${item.symbol}`;
     
-            const tokenItem = document.createElement('a');
+            const tokenItem = document.createElement('div');
             tokenItem.className = 'list-item';
-            tokenItem.href = solscanUrl;
-            tokenItem.target = '_blank';  // Open in a new tab
-            tokenItem.style.textDecoration = 'none';  // Remove underline from the link
     
             const logo = document.createElement('img');
             logo.src = item.logo_uri;
@@ -48,12 +47,53 @@ document.addEventListener('DOMContentLoaded', function () {
             const textContent = document.createElement('div');
             textContent.innerHTML = `<b>${item.name}</b> (${item.symbol})`;
     
+            const buttonsContainer = document.createElement('div');
+            buttonsContainer.className = 'buttons-container';
+    
+            // Trade Button with Tooltip
+            const tradeButton = document.createElement('a');
+            tradeButton.href = sanctumTradeUrl;
+            tradeButton.target = '_blank';
+            tradeButton.className = 'btn trade-button tooltip';
+            tradeButton.innerHTML = `
+                <img src="images/sanctum001.webp" alt="Swap on Sanctum" data-translate="swap_sanctum" class="button-icon">
+                <span class="tooltiptext" data-translate="swap_sanctum">Swap on Sanctum</span>
+            `;
+    
+            // Swap Button with Tooltip
+            const swapButton = document.createElement('a');
+            swapButton.href = jupiterSwapUrl;
+            swapButton.target = '_blank';
+            swapButton.className = 'btn swap-button tooltip';
+            swapButton.innerHTML = `
+                <img src="images/jupiter001.webp" alt="Swap on Jupiter" data-translate="swap_jupiter" class="button-icon">
+                <span class="tooltiptext" data-translate="swap_jupiter">Swap on Jupiter</span>
+            `;
+    
+            // Explorer Button with Tooltip
+            const explorerButton = document.createElement('a');
+            explorerButton.href = solscanUrl;
+            explorerButton.target = '_blank';
+            explorerButton.className = 'btn explorer-button tooltip';
+            explorerButton.innerHTML = `
+                <img src="images/solscan001.webp" alt="View on Solscan" data-translate="view_solscan" class="button-icon">
+                <span class="tooltiptext" data-translate="view_solscan">View on Solscan</span>
+            `;
+    
+            buttonsContainer.appendChild(tradeButton);
+            buttonsContainer.appendChild(swapButton);
+            buttonsContainer.appendChild(explorerButton);
+    
             tokenItem.appendChild(logo);
             tokenItem.appendChild(textContent);
+            tokenItem.appendChild(buttonsContainer);
     
             lstTokenListContainer.appendChild(tokenItem);
         });
-    }    
+
+        // Apply translations after inserting the elements
+        applyTranslations();  // <--- This is the main addition
+    }               
 
     function parseTOML(data) {
         const items = [];

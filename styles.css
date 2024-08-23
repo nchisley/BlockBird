@@ -4,6 +4,7 @@
 /*
 --------
 Colors 
+#daecdd Fade
 #c8edce Mint 
 #94E5A0 Lime
 #689f70 Leaf
@@ -551,6 +552,7 @@ input[type="checkbox"] {
 
 .content-explore {
   padding:0 10px 0 10px;
+  flex-direction:column;
 }
 
 .grid-list {
@@ -573,14 +575,13 @@ input[type="checkbox"] {
   border-radius: 4px;
   padding: 10px;
   text-decoration: none;
-  height:46px;
+  height:auto;
   color:#1d1d1d;
 }
 
 .list-item:hover {
   background-color: #94E5A0;
   color:#1d1d1d;
-  cursor:pointer;
 }
 
 .pagination-controls {
@@ -750,6 +751,17 @@ button.import-export {
 
 /***TOKENS***/
 
+.tokens-head {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+  padding: 10px;
+  gap:4px;
+}
+
 .tokens-content {
   background-color:#cacaca;
   margin:0 10px 10px 10px;
@@ -771,8 +783,8 @@ button.import-export {
 }
 
 .flex-list .list-item {
-  background-color: #c8edce;
-  padding: 20px 10px;
+  background-color: #daecdd;
+  padding: 15px 10px;
   border-radius: 4px;
   text-align: center;
   color: #1d1d1d;
@@ -783,8 +795,8 @@ button.import-export {
 }
 
 .flex-list .list-item:hover {
-  background-color: #94E5A0;
-  cursor: pointer;
+  background-color: #c8edce;
+  cursor:default;
 }
 
 .flex-list .list-item div {
@@ -805,13 +817,12 @@ button.import-export {
   display: flex;
   flex-direction:row;
   flex-wrap:wrap;
-  flex-grow: 0;
-  flex-shrink: 1;
+  flex-grow: 1;
   flex-basis: auto;
   align-self: auto;
   justify-content:center;
   order: 0;
-  padding: 10px;
+  padding: 0;
   gap:4px;
 }
 
@@ -853,18 +864,62 @@ button.import-export {
 #token-search-container,
 #lst-search-container {
   display: flex;
-  flex-grow: 0;
+  flex-grow: 1;
   flex-wrap: wrap;
   flex-shrink: 1;
   flex-basis: auto;
   align-self: auto;
   order: 0;
-  padding: 0 10px 10px 10px;
+  padding: 0;
 }
 
 #token-search,
 #lst-search {
-    margin-top: 10px;
+    margin-top: 0;
+}
+
+.buttons-container {
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+
+#lst-token-list .btn {
+  border-radius:50%;
+  cursor:pointer;
+  background:#2d4731;
+  width:24px;
+  height:24px;
+  padding:4px;
+}
+
+#lst-token-list .btn:hover {
+  background:#689f70;
+}
+
+#lst-token-list .button-icon {
+  width:24px;
+  height:24px;
+}
+
+#lst-token-list .tooltip {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+#lst-token-list .tooltiptext {
+  top:unset;
+  bottom: 66px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#SolanaTokens .list-item:hover {
+  cursor:pointer;
 }
 
 /***PAY***/
@@ -986,11 +1041,11 @@ body.dark-mode .list-item {
 }
 
 body.dark-mode .list-item:hover {
-  background-color: #37523c;
+  background-color: #2d4731;
 }
 
 body.dark-mode .flex-list .list-item:hover {
-  background-color: #37523c;
+  background-color: #2d4731;
 }
 
 body.dark-mode .tablink.active,

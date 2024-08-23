@@ -4,11 +4,14 @@
   <title>Solana Tokens</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="translations.js"></script>
   <script src="scripts.js" defer></script>
   <script src="solana-tokens.js"></script>
   <script src="lsts.js"></script>
 </head>
 <body>
+
+  <!--Header-->
   <div class="header">
     <div id="header-container"></div>
     <h1 data-translate="solana_tokens">Solana Tokens</h1>
@@ -22,27 +25,26 @@
     </span>
   </div>
 
-  <!--Tab Select-->
-  <div id="tabs" class="tabs">
-    <select id="tabSelector">
-      <option value="SolanaTokens" data-translate="token_tab">Token</option>
-      <option value="SanctumLSTs" data-translate="lst_tab">LST</option>
-    </select>
+  <!--Tokens Head-->
+  <div class="tokens-head">
+    <!--Tab Select-->
+    <div id="tabs" class="tabs">
+      <select id="tabSelector">
+        <option value="SolanaTokens" data-translate="token_tab">Token</option>
+        <option value="SanctumLSTs" data-translate="lst_tab">LST</option>
+      </select>
+    </div>
+    <!--Token Search-->
+    <div id="token-search-container" class="token-search" style="display: none;">
+      <input type="text" id="token-search" data-translate="search_sol_tokens" placeholder="Search all Solana Tokens..." />
+    </div>
+    <!--LST Search-->
+    <div id="lst-search-container" class="token-search" style="display:none;">
+      <input type="text" id="lst-search" data-translate="search_sanctum_lsts" placeholder="Search all Sanctum LSTs..." />
+    </div>
   </div>
 
-  <!--Token Search-->
-  <div id="token-search-container" class="token-search" style="display: none;">
-    <h4><a href="https://jup.ag" target="_blank" data-translate="powered_by_jupiter">Powered by Jupiter</a></h4>
-    <input type="text" id="token-search" data-translate="search_sol_tokens" placeholder="Search all Solana Tokens..." />
-  </div>
-
-  <!--LST Search-->
-  <div id="lst-search-container" class="token-search" style="display:none;">
-    <h4><a href="https://app.sanctum.so" target="_blank" data-translate="powered_by_sanctum">Powered by Sanctum</a></h4>
-    <input type="text" id="lst-search" data-translate="search_sanctum_lsts" placeholder="Search all Sanctum LSTs..." />
-  </div>
-
-  <!--Token Content-->
+  <!--Tokens Content-->
   <div id="SolanaTokens" class="content tokens-content tabcontent">
     <div id="loading" data-translate="loading">Loading...</div>
     <div id="token-list" class="flex-list"></div>
@@ -54,6 +56,7 @@
     <div id="lst-token-list" class="flex-list"></div>
   </div>
 
+    <!--Footer-->
   <div class="footer">
     <div id="nav-container"></div>
   </div>
