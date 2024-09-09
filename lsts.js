@@ -24,7 +24,30 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   
     async function fetchAPY(symbol) {
-        const apiUrl = `https://sanctum-extra-api.ngrok.dev/v1/apy/latest?lst=${symbol}`;
+      const apiUrl = `https://sanctum-extra-api.ngrok.dev/v1/apy/latest?lst=${symbol}`;
+      try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+  
+        console.log(`APY response for ${symbol}:`, data);
+  
+        if (data.apys && data.apys[symbol] !== undefined) {
+          const apy = data.apys[symbol] * 100;  // Convert APY to percentage
+          return `${apy.toFixed(2)}%`;  // Format with two decimal places
+        } else {
+          return 'N/A';
+        }
+      } catch (error) {
+        console.error(`Error fetching APY for ${symbol}:`, error);
+        return 'N/A';
+      }
+    }
+  
+    async function fetchTVL(symbol) {
+        const apiUrl = `https://sanctum-extra-api.ngrok.dev/v1/tvl/current?lst=${symbol}`;
         try {
           const response = await fetch(apiUrl);
           if (!response.ok) {
@@ -32,17 +55,17 @@ document.addEventListener('DOMContentLoaded', function () {
           }
           const data = await response.json();
       
-          console.log(`APY response for ${symbol}:`, data);
+          console.log(`TVL response for ${symbol}:`, data);
       
-          // Check for the APY within the 'apys' object using the symbol
-          if (data.apys && data.apys[symbol] !== undefined) {
-            const apy = data.apys[symbol] * 100;  // Convert APY to percentage
-            return `${apy.toFixed(2)}%`;  // Format with two decimal places
+          if (data.tvls && data.tvls[symbol] !== undefined) {
+            // Convert the TVL to a float, move the decimal 9 places, and round down
+            const tvl = Math.floor(parseFloat(data.tvls[symbol]) / 1e9);  // Move decimal and round down
+            return `${tvl.toLocaleString()} SOL`;  // Format TVL as SOL
           } else {
-            return 'N/A';  // Return N/A if APY is not available
+            return 'N/A';
           }
         } catch (error) {
-          console.error(`Error fetching APY for ${symbol}:`, error);
+          console.error(`Error fetching TVL for ${symbol}:`, error);
           return 'N/A';
         }
     }               
@@ -71,9 +94,17 @@ document.addEventListener('DOMContentLoaded', function () {
             const apyElement = document.createElement('div');
             apyElement.className = 'apy-info';
             apyElement.innerHTML = 'Fetching APY...';
-    
+  
+            const tvlElement = document.createElement('div');
+            tvlElement.className = 'tvl-info';
+            tvlElement.innerHTML = 'Fetching TVL...';
+  
+            // Fetch APY and TVL
             const apyValue = await fetchAPY(item.symbol);
+            const tvlValue = await fetchTVL(item.symbol);
+  
             apyElement.innerHTML = `APY: ${apyValue}`;
+            tvlElement.innerHTML = `TVL: ${tvlValue}`;
     
             const buttonsContainer = document.createElement('div');
             buttonsContainer.className = 'buttons-container';
@@ -114,7 +145,8 @@ document.addEventListener('DOMContentLoaded', function () {
     
             tokenItem.appendChild(logo);
             tokenItem.appendChild(textContent);
-            tokenItem.appendChild(apyElement);  // Add the APY info here
+            tokenItem.appendChild(apyElement);  // Add the APY info
+            tokenItem.appendChild(tvlElement);  // Add the TVL info
             tokenItem.appendChild(buttonsContainer);
     
             lstTokenListContainer.appendChild(tokenItem);
