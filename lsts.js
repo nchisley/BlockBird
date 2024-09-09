@@ -3,7 +3,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const lstTokenListContainer = document.getElementById('lst-token-list');
     const lstLoadingIndicator = document.getElementById('lst-loading');
     const lstSearchInput = document.getElementById('lst-search');
+    const lstSortSelect = document.getElementById('lst-sort');
     let lstList = [];
+    let lstAPYMap = {};  // Store APY values for sorting
+    let lstTVLMap = {};  // Store TVL values for sorting
   
     async function fetchSanctumLSTList() {
         try {
@@ -16,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             const data = await response.text();
             lstList = parseTOML(data);
+            await loadLSTData();  // Load APY and TVL data before displaying
             displayLSTList(lstList);
         } catch (error) {
             console.error('Error fetching Sanctum LST List:', error);
@@ -31,49 +35,70 @@ document.addEventListener('DOMContentLoaded', function () {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-  
-        console.log(`APY response for ${symbol}:`, data);
-  
         if (data.apys && data.apys[symbol] !== undefined) {
           const apy = data.apys[symbol] * 100;  // Convert APY to percentage
+          lstAPYMap[symbol] = apy;  // Store APY in map for sorting
           return `${apy.toFixed(2)}%`;  // Format with two decimal places
         } else {
+          lstAPYMap[symbol] = null;
           return 'N/A';
         }
       } catch (error) {
         console.error(`Error fetching APY for ${symbol}:`, error);
+        lstAPYMap[symbol] = null;
         return 'N/A';
       }
     }
   
     async function fetchTVL(symbol) {
-        const apiUrl = `https://sanctum-extra-api.ngrok.dev/v1/tvl/current?lst=${symbol}`;
-        try {
-          const response = await fetch(apiUrl);
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          const data = await response.json();
-      
-          console.log(`TVL response for ${symbol}:`, data);
-      
-          if (data.tvls && data.tvls[symbol] !== undefined) {
-            // Convert the TVL to a float, move the decimal 9 places, and round down
-            const tvl = Math.floor(parseFloat(data.tvls[symbol]) / 1e9);  // Move decimal and round down
-            return `${tvl.toLocaleString()} SOL`;  // Format TVL as SOL
-          } else {
-            return 'N/A';
-          }
-        } catch (error) {
-          console.error(`Error fetching TVL for ${symbol}:`, error);
+      const apiUrl = `https://sanctum-extra-api.ngrok.dev/v1/tvl/current?lst=${symbol}`;
+      try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        if (data.tvls && data.tvls[symbol] !== undefined) {
+          const tvl = Math.floor(parseFloat(data.tvls[symbol]) / 1e9);  // Convert TVL and round down
+          lstTVLMap[symbol] = tvl;  // Store TVL in map for sorting
+          return `${tvl.toLocaleString()} SOL`;  // Format TVL as SOL
+        } else {
+          lstTVLMap[symbol] = null;
           return 'N/A';
         }
-    }               
+      } catch (error) {
+        console.error(`Error fetching TVL for ${symbol}:`, error);
+        lstTVLMap[symbol] = null;
+        return 'N/A';
+      }
+    }
+  
+    async function loadLSTData() {
+      for (const item of lstList) {
+        await fetchAPY(item.symbol);
+        await fetchTVL(item.symbol);
+      }
+    }
+  
+    function sortLSTList(lstList, sortType) {
+      if (sortType === 'apy-high') {
+        return lstList.sort((a, b) => (lstAPYMap[b.symbol] || 0) - (lstAPYMap[a.symbol] || 0));
+      } else if (sortType === 'apy-low') {
+        return lstList.sort((a, b) => (lstAPYMap[a.symbol] || 0) - (lstAPYMap[b.symbol] || 0));
+      } else if (sortType === 'tvl-high') {
+        return lstList.sort((a, b) => (lstTVLMap[b.symbol] || 0) - (lstTVLMap[a.symbol] || 0));
+      } else if (sortType === 'tvl-low') {
+        return lstList.sort((a, b) => (lstTVLMap[a.symbol] || 0) - (lstTVLMap[b.symbol] || 0));
+      }
+      return lstList;  // Default to original order if no valid sort type
+    }
   
     async function displayLSTList(lstList) {
         lstLoadingIndicator.style.display = 'none';  // Hide loading indicator
         lstTokenListContainer.innerHTML = '';  // Clear any existing content
         lstTokenListContainer.style.display = 'flex';  // Show the list container
+    
+        lstList = sortLSTList(lstList, lstSortSelect.value);  // Apply sorting
     
         for (const item of lstList) {
             const solscanUrl = `https://solscan.io/token/${item.mint}`;
@@ -93,19 +118,12 @@ document.addEventListener('DOMContentLoaded', function () {
     
             const apyElement = document.createElement('div');
             apyElement.className = 'apy-info';
-            apyElement.innerHTML = 'Fetching APY...';
+            apyElement.innerHTML = `APY: ${lstAPYMap[item.symbol] ? lstAPYMap[item.symbol].toFixed(2) + '%' : 'N/A'}`;
   
             const tvlElement = document.createElement('div');
             tvlElement.className = 'tvl-info';
-            tvlElement.innerHTML = 'Fetching TVL...';
+            tvlElement.innerHTML = `TVL: ${lstTVLMap[item.symbol] ? lstTVLMap[item.symbol].toLocaleString() + ' SOL' : 'N/A'}`;
   
-            // Fetch APY and TVL
-            const apyValue = await fetchAPY(item.symbol);
-            const tvlValue = await fetchTVL(item.symbol);
-  
-            apyElement.innerHTML = `APY: ${apyValue}`;
-            tvlElement.innerHTML = `TVL: ${tvlValue}`;
-    
             const buttonsContainer = document.createElement('div');
             buttonsContainer.className = 'buttons-container';
     
@@ -189,7 +207,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Attach event listener for search
     lstSearchInput.addEventListener('input', filterLSTs);
   
+    // Attach event listener for sorting
+    lstSortSelect.addEventListener('change', () => {
+      lstSearchInput.value = '';  // Clear the search input when sorting changes
+      displayLSTList(lstList);  // Re-render the list based on the sorting
+    });
+  
     // Fetch and display LSTs on page load
     fetchSanctumLSTList();
-  });
-  
+});

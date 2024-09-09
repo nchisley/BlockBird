@@ -802,8 +802,15 @@ button.import-export {
 
 .token-search input,
 .lst-search input {
-    margin-top: 0;
-    width:100%;
+  margin-top: 0;
+  width:50%;
+  flex-grow:1;
+}
+
+.lst-sort {
+  margin-top: 0;
+  width:40%;
+  flex-grow:1;
 }
 
 .tokens-content {

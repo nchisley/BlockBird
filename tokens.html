@@ -36,9 +36,17 @@
     <div id="token-search-container" class="token-search" style="display: none;">
       <input type="text" id="token-search" data-translate="search_sol_tokens" placeholder="Search all Solana Tokens..." />
     </div>
-    <!--LST Search-->
+    <!-- LST Search -->
     <div id="lst-search-container" class="token-search" style="display:none;">
       <input type="text" id="lst-search" data-translate="search_sanctum_lsts" placeholder="Search all Sanctum LSTs..." />
+      <!-- Sorting Dropdown -->
+      <select id="lst-sort" class="lst-sort">
+        <option value="" disabled selected data-translate="sort_by">Sort by...</option>
+        <option value="apy-high" data-translate="apy_high">APY: High to Low</option>
+        <option value="apy-low" data-translate="apy_low">APY: Low to High</option>
+        <option value="tvl-high" data-translate="tvl_high">TVL: High to Low</option>
+        <option value="tvl-low" data-translate="tvl_low">TVL: Low to High</option>
+      </select>
     </div>
   </div>
 
