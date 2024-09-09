@@ -3,16 +3,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const lstTokenListContainer = document.getElementById('lst-token-list');
     const lstLoadingIndicator = document.getElementById('lst-loading');
     const lstSearchInput = document.getElementById('lst-search');
-    const tokenSearchContainer = document.getElementById('token-search-container');
-    const lstSearchContainer = document.getElementById('lst-search-container');
-    const tabSelector = document.getElementById('tabSelector');
     let lstList = [];
-
+  
     async function fetchSanctumLSTList() {
         try {
             lstLoadingIndicator.style.display = 'block';  // Show loading indicator
             lstTokenListContainer.style.display = 'none';  // Hide the list container
-
+  
             const response = await fetch(sanctumLSTUrl);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -25,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
             lstLoadingIndicator.textContent = 'Failed to load LSTs';
         }
     }
-
+  
     function displayLSTList(lstList) {
         lstLoadingIndicator.style.display = 'none';  // Hide loading indicator
         lstTokenListContainer.innerHTML = '';  // Clear any existing content
@@ -58,103 +55,76 @@ document.addEventListener('DOMContentLoaded', function () {
             tradeButton.innerHTML = `
                 <img src="images/sanctum001.webp" alt="Swap on Sanctum" data-translate="swap_sanctum" class="button-icon">
                 <span class="tooltiptext" data-translate="swap_sanctum">Swap on Sanctum</span>
-            `;
-    
-            // Swap Button with Tooltip
-            const swapButton = document.createElement('a');
-            swapButton.href = jupiterSwapUrl;
-            swapButton.target = '_blank';
-            swapButton.className = 'btn swap-button tooltip';
-            swapButton.innerHTML = `
-                <img src="images/jupiter001.webp" alt="Swap on Jupiter" data-translate="swap_jupiter" class="button-icon">
-                <span class="tooltiptext" data-translate="swap_jupiter">Swap on Jupiter</span>
-            `;
-    
-            // Explorer Button with Tooltip
-            const explorerButton = document.createElement('a');
-            explorerButton.href = solscanUrl;
-            explorerButton.target = '_blank';
-            explorerButton.className = 'btn explorer-button tooltip';
-            explorerButton.innerHTML = `
-                <img src="images/solscan001.webp" alt="View on Solscan" data-translate="view_solscan" class="button-icon">
-                <span class="tooltiptext" data-translate="view_solscan">View on Solscan</span>
-            `;
-    
-            buttonsContainer.appendChild(tradeButton);
-            buttonsContainer.appendChild(swapButton);
-            buttonsContainer.appendChild(explorerButton);
-    
-            tokenItem.appendChild(logo);
-            tokenItem.appendChild(textContent);
-            tokenItem.appendChild(buttonsContainer);
-    
-            lstTokenListContainer.appendChild(tokenItem);
-        });
+          `;
 
-        // Apply translations after inserting the elements
-        applyTranslations();  // <--- This is the main addition
-    }               
+          // Swap Button with Tooltip
+          const swapButton = document.createElement('a');
+          swapButton.href = jupiterSwapUrl;
+          swapButton.target = '_blank';
+          swapButton.className = 'btn swap-button tooltip';
+          swapButton.innerHTML = `
+              <img src="images/jupiter001.webp" alt="Swap on Jupiter" data-translate="swap_jupiter" class="button-icon">
+              <span class="tooltiptext" data-translate="swap_jupiter">Swap on Jupiter</span>
+          `;
 
-    function parseTOML(data) {
-        const items = [];
-        const lines = data.split('\n');
-        let currentItem = {};
+          // Explorer Button with Tooltip
+          const explorerButton = document.createElement('a');
+          explorerButton.href = solscanUrl;
+          explorerButton.target = '_blank';
+          explorerButton.className = 'btn explorer-button tooltip';
+          explorerButton.innerHTML = `
+              <img src="images/solscan001.webp" alt="View on Solscan" data-translate="view_solscan" class="button-icon">
+              <span class="tooltiptext" data-translate="view_solscan">View on Solscan</span>
+          `;
 
-        lines.forEach(line => {
-            if (line.startsWith('[')) {
-                if (Object.keys(currentItem).length > 0) {
-                    items.push(currentItem);
-                    currentItem = {};
-                }
-            } else if (line.includes('=')) {
-                const [key, value] = line.split('=').map(s => s.trim());
-                currentItem[key.toLowerCase()] = value.replace(/['"]/g, '');
-            }
-        });
+          buttonsContainer.appendChild(tradeButton);
+          buttonsContainer.appendChild(swapButton);
+          buttonsContainer.appendChild(explorerButton);
 
-        if (Object.keys(currentItem).length > 0) {
-            items.push(currentItem);
-        }
+          tokenItem.appendChild(logo);
+          tokenItem.appendChild(textContent);
+          tokenItem.appendChild(buttonsContainer);
 
-        return items.filter(item => item.name && item.symbol && item.mint);
-    }
+          lstTokenListContainer.appendChild(tokenItem);
+      });
+  }
 
-    function openTab(tabName) {
-        const tabcontent = document.getElementsByClassName("tabcontent");
-        for (let i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
+  function parseTOML(data) {
+      const items = [];
+      const lines = data.split('\n');
+      let currentItem = {};
 
-        document.getElementById(tabName).style.display = "block";
+      lines.forEach(line => {
+          if (line.startsWith('[')) {
+              if (Object.keys(currentItem).length > 0) {
+                  items.push(currentItem);
+                  currentItem = {};
+              }
+          } else if (line.includes('=')) {
+              const [key, value] = line.split('=').map(s => s.trim());
+              currentItem[key.toLowerCase()] = value.replace(/['"]/g, '');
+          }
+      });
 
-        // Toggle the search input visibility
-        if (tabName === "SanctumLSTs") {
-            lstSearchContainer.style.display = 'flex';
-            tokenSearchContainer.style.display = 'none';
-            fetchSanctumLSTList();
-        } else {
-            lstSearchContainer.style.display = 'none';
-            tokenSearchContainer.style.display = 'flex';
-        }
-    }
+      if (Object.keys(currentItem).length > 0) {
+          items.push(currentItem);
+      }
 
-    function filterLSTs() {
-        const searchTerm = lstSearchInput.value.toLowerCase();
-        const filteredList = lstList.filter(item => 
-            item.name.toLowerCase().includes(searchTerm) || 
-            item.symbol.toLowerCase().includes(searchTerm)
-        );
-        displayLSTList(filteredList);
-    }
+      return items.filter(item => item.name && item.symbol && item.mint);
+  }
 
-    // Attach event listener for tab selection
-    tabSelector.addEventListener('change', function () {
-        openTab(tabSelector.value);
-    });
+  function filterLSTs() {
+      const searchTerm = lstSearchInput.value.toLowerCase();
+      const filteredList = lstList.filter(item => 
+          item.name.toLowerCase().includes(searchTerm) || 
+          item.symbol.toLowerCase().includes(searchTerm)
+      );
+      displayLSTList(filteredList);
+  }
 
-    // Attach event listener for search
-    lstSearchInput.addEventListener('input', filterLSTs);
+  // Attach event listener for search
+  lstSearchInput.addEventListener('input', filterLSTs);
 
-    // Set default tab open
-    openTab(tabSelector.value);
+  // Fetch and display LSTs on page load
+  fetchSanctumLSTList();
 });

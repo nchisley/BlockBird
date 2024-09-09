@@ -760,7 +760,50 @@ button.import-export {
   align-self: auto;
   order: 0;
   padding: 10px;
+  gap: 10px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.tabs {
+  display: flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  flex-grow: 1;
+  flex-basis: auto;
+  align-self: auto;
+  justify-content:center;
+  order: 0;
+  padding: 0;
   gap:4px;
+  width:100%;
+}
+
+.tab-button {
+  flex-grow: 1;
+  width: 45%;
+}
+
+.token-search,
+.lst-search {
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  flex-basis: auto;
+  align-self: auto;
+  justify-content: center;
+  order: 0;
+  padding: 0;
+  gap: 4px;
+  width:100%;
+}
+
+.token-search input,
+.lst-search input {
+    margin-top: 0;
+    width:100%;
 }
 
 .tokens-content {
@@ -814,19 +857,6 @@ button.import-export {
   font-size: 16px;
 }
 
-.tabs {
-  display: flex;
-  flex-direction:row;
-  flex-wrap:wrap;
-  flex-grow: 1;
-  flex-basis: auto;
-  align-self: auto;
-  justify-content:center;
-  order: 0;
-  padding: 0;
-  gap:4px;
-}
-
 .tabcontent {
   display: none;
   padding: 10px;
@@ -860,23 +890,6 @@ button.import-export {
 
 .tablink.active:disabled {
   cursor: not-allowed;
-}
-
-#token-search-container,
-#lst-search-container {
-  display: flex;
-  flex-grow: 1;
-  flex-wrap: wrap;
-  flex-shrink: 1;
-  flex-basis: auto;
-  align-self: auto;
-  order: 0;
-  padding: 0;
-}
-
-#token-search,
-#lst-search {
-    margin-top: 0;
 }
 
 .buttons-container {
