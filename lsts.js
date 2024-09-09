@@ -113,17 +113,19 @@ document.addEventListener('DOMContentLoaded', function () {
             logo.alt = `${item.name} logo`;
             logo.className = 'token-logo';
     
+            // Add the name and symbol class to this div
             const textContent = document.createElement('div');
+            textContent.className = 'name-symbol';  // New class for styling
             textContent.innerHTML = `<b>${item.name}</b> (${item.symbol})`;
     
             const apyElement = document.createElement('div');
             apyElement.className = 'apy-info';
             apyElement.innerHTML = `APY: ${lstAPYMap[item.symbol] ? lstAPYMap[item.symbol].toFixed(2) + '%' : 'N/A'}`;
-  
+    
             const tvlElement = document.createElement('div');
             tvlElement.className = 'tvl-info';
             tvlElement.innerHTML = `TVL: ${lstTVLMap[item.symbol] ? lstTVLMap[item.symbol].toLocaleString() + ' SOL' : 'N/A'}`;
-  
+    
             const buttonsContainer = document.createElement('div');
             buttonsContainer.className = 'buttons-container';
     
@@ -162,14 +164,14 @@ document.addEventListener('DOMContentLoaded', function () {
             buttonsContainer.appendChild(explorerButton);
     
             tokenItem.appendChild(logo);
-            tokenItem.appendChild(textContent);
+            tokenItem.appendChild(textContent);  // Add name and symbol div
             tokenItem.appendChild(apyElement);  // Add the APY info
             tokenItem.appendChild(tvlElement);  // Add the TVL info
             tokenItem.appendChild(buttonsContainer);
     
             lstTokenListContainer.appendChild(tokenItem);
         }
-    }
+    }    
   
     function parseTOML(data) {
         const items = [];

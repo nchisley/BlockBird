@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Orbitron:wght@400..900&display=swap');
 
 /*
 --------
@@ -850,14 +851,6 @@ button.import-export {
   cursor:default;
 }
 
-.flex-list .list-item div {
-  margin-bottom: 5px;
-}
-
-.flex-list .list-item div:last-child {
-  margin-bottom: 0;
-}
-
 #tabSelector {
   width: 100%;
   padding: 10px;
@@ -941,6 +934,28 @@ button.import-export {
 
 #SolanaTokens .list-item:hover {
   cursor:pointer;
+}
+
+.name-symbol {
+  font-family: "Roboto", sans-serif;
+  font-size:16px;
+  text-shadow: 0 2px #222222;
+}
+
+.apy-info,
+.tvl-info {
+  font-family: "Jura", sans-serif;
+  color:#00ab33;
+  font-weight: bold;
+  text-shadow: 0 1px #222222;
+}
+
+.apy-info {
+  margin-bottom:0;
+}
+
+.tvl-info {
+  margin-bottom:10px;
 }
 
 /***PAY***/
