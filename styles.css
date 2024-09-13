@@ -98,7 +98,8 @@ body.panel-open {
   color: #689f70;
 }
 
-.info-icon {
+.info-icon,
+.info-icon a {
   margin-bottom:10px;
   text-decoration: none;
   color:#2d4731;
@@ -108,7 +109,8 @@ body.panel-open {
   font-weight:bold;
 }
 
-.info-icon:hover {
+.info-icon:hover,
+.info-icon a:hover {
   color:#689f70;
 }
 
@@ -1147,11 +1149,13 @@ body.dark-mode .refresh-icon {
   background:#303030;
 }
 
-body.dark-mode .info-icon {
+body.dark-mode .info-icon,
+body.dark-mode .info-icon a {
   color:#94E5A0;
 }
 
-body.dark-mode .info-icon:hover {
+body.dark-mode .info-icon:hover,
+body.dark-mode .info-icon a:hover {
   color:#c8edce;
 }
 
