@@ -791,37 +791,44 @@ button.import-export {
 .progress-container {
   width: 100%;
   background-color: #f3f3f3;
-  border-radius: 4px;
+  border-radius: 0;
   margin-bottom: 10px;
-  height: 25px;
+  height: 20px;
   position: absolute;
+  top:0;
+  left:0;
 }
 
 .progress-bar {
   height: 100%;
   width: 0;
   background-color: #4caf50;
-  border-radius: 4px;
+  border-radius: 0;
   transition: width 0.4s ease;
 }
 
 .progress-text {
   position: absolute;
   top: 0;
-  left: 10px;
+  left: 20px;
   transform: translateX(-50%);
   font-weight: bold;
-  line-height: 25px;
+  line-height: 20px;
+  font-size: 14px;
 }
 
 /* Refresh Icon Style */
 .refresh-icon {
-  font-size: 24px;
+  font-size: 15px;
+  font-weight:bold;
   cursor: pointer;
   position: absolute;
-  top: 200px;
-  left: 20px;
-  color: #4caf50;
+  top: 0;
+  left: 0;
+  color: #151515;
+  background: #4caf50;
+  border-radius: 0 0 50% 0;
+  padding: 0 5px;
 }
 
 .refresh-icon:hover {
@@ -901,6 +908,7 @@ button.import-export {
 .tabcontent {
   display: none;
   padding: 10px;
+  position:relative;
 }
 
 .tokens-content ul {
