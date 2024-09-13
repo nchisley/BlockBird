@@ -846,8 +846,8 @@ button.import-export {
 /* Progress Bar */
 .progress-container {
   position:fixed;
-  top: 205px;
-  left: 12px;
+  top: 204px;
+  left: 10px;
   width: 370px;
   height: 28px;
   border-radius: 0;
