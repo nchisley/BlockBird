@@ -6,12 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const tokenSearchContainer = document.getElementById('token-search-container');
     const lstSearchContainer = document.getElementById('lst-search-container');
     
-    // Initially display Token tab
-    solanaTokensTab.style.display = 'flex';
-    sanctumLstsTab.style.display = 'none';
-    tokenSearchContainer.style.display = 'flex';
-    lstSearchContainer.style.display = 'none';
-    tokenButton.classList.add('active');  // Set the active class to token tab initially
+    // Initially display LST tab by default
+    sanctumLstsTab.style.display = 'flex';
+    solanaTokensTab.style.display = 'none';
+    lstSearchContainer.style.display = 'flex';
+    tokenSearchContainer.style.display = 'none';
+    lstButton.classList.add('active');  // Set the active class to LST tab initially
   
     // Function to handle active tab class
     function activateTab(buttonToActivate, buttonToDeactivate, tabToShow, tabToHide, searchToShow, searchToHide) {
@@ -89,5 +89,3 @@ document.addEventListener('DOMContentLoaded', function () {
   
     fetchSolanaTokens();
 });
-
-  

@@ -993,8 +993,8 @@ button.import-export {
   border-radius:50%;
   cursor:pointer;
   background:#2d4731;
-  width:24px;
-  height:24px;
+  width:18px;
+  height:18px;
   padding:4px;
 }
 
@@ -1003,8 +1003,8 @@ button.import-export {
 }
 
 #lst-token-list .button-icon {
-  width:24px;
-  height:24px;
+  width:18px;
+  height:18px;
 }
 
 #lst-token-list .tooltip {
@@ -1156,8 +1156,8 @@ body.dark-mode .info-icon:hover {
 }
 
 body.dark-mode .tooltiptext {
-  background:#283043;
-  color:#ffffff;
+  background:#ffffff;
+  color:#151515;
 }
 
 body.dark-mode h1 {
@@ -1186,11 +1186,15 @@ body.dark-mode .tab-button,
 body.dark-mode .tab-button:hover {
   color: #888888;
   background:transparent;
+  border:2px solid transparent;
+  border-bottom:2px solid #666666;
 }
 
 body.dark-mode .tab-button.active,
 body.dark-mode .tabbutton.active:hover {
   color: #ffffff;
+  border:2px solid #666666;
+  border-bottom:2px solid transparent;
 }
 
 body.dark-mode .tabcontent {
