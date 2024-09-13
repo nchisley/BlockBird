@@ -787,6 +787,47 @@ button.import-export {
   width: 45%;
 }
 
+/* Progress Bar Styles */
+.progress-container {
+  width: 100%;
+  background-color: #f3f3f3;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  height: 25px;
+  position: absolute;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background-color: #4caf50;
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+.progress-text {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  transform: translateX(-50%);
+  font-weight: bold;
+  line-height: 25px;
+}
+
+/* Refresh Icon Style */
+.refresh-icon {
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 200px;
+  left: 20px;
+  color: #4caf50;
+}
+
+.refresh-icon:hover {
+  color: #45a049;
+}
+
 .token-search,
 .lst-search {
   flex-direction: row;
@@ -939,7 +980,6 @@ button.import-export {
 .name-symbol {
   font-family: "Roboto", sans-serif;
   font-size:16px;
-  text-shadow: 0 2px #222222;
 }
 
 .apy-info,

@@ -58,11 +58,15 @@
 
   <!--LST Content-->
   <div id="SanctumLSTs" class="content tokens-content tabcontent">
-    <div id="lst-loading" data-translate="loading">Loading...</div>
+    <div id="lst-refresh" class="refresh-icon">&#x21bb;</div>
+    <div id="lst-progress-container" class="progress-container">
+      <div id="lst-progress-bar" class="progress-bar"></div>
+      <span id="lst-progress-text" class="progress-text">0%</span>
+    </div>
     <div id="lst-token-list" class="flex-list"></div>
   </div>
 
-    <!--Footer-->
+  <!--Footer-->
   <div class="footer">
     <div id="nav-container"></div>
   </div>
