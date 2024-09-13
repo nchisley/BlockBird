@@ -11,22 +11,27 @@ document.addEventListener('DOMContentLoaded', function () {
     sanctumLstsTab.style.display = 'none';
     tokenSearchContainer.style.display = 'flex';
     lstSearchContainer.style.display = 'none';
+    tokenButton.classList.add('active');  // Set the active class to token tab initially
+  
+    // Function to handle active tab class
+    function activateTab(buttonToActivate, buttonToDeactivate, tabToShow, tabToHide, searchToShow, searchToHide) {
+      buttonToActivate.classList.add('active');
+      buttonToDeactivate.classList.remove('active');
+      tabToShow.style.display = 'flex';
+      tabToHide.style.display = 'none';
+      searchToShow.style.display = 'flex';
+      searchToHide.style.display = 'none';
+    }
   
     tokenButton.addEventListener('click', () => {
-      solanaTokensTab.style.display = 'flex';
-      sanctumLstsTab.style.display = 'none';
-      tokenSearchContainer.style.display = 'flex';
-      lstSearchContainer.style.display = 'none';
+      activateTab(tokenButton, lstButton, solanaTokensTab, sanctumLstsTab, tokenSearchContainer, lstSearchContainer);
     });
   
     lstButton.addEventListener('click', () => {
-      solanaTokensTab.style.display = 'none';
-      sanctumLstsTab.style.display = 'flex';
-      tokenSearchContainer.style.display = 'none';
-      lstSearchContainer.style.display = 'flex';
+      activateTab(lstButton, tokenButton, sanctumLstsTab, solanaTokensTab, lstSearchContainer, tokenSearchContainer);
     });
-  
-    // Original solana-tokens.js content (unchanged)
+
+    // Original content (unchanged)
     const tokenListContainer = document.getElementById('token-list');
     const loadingIndicator = document.getElementById('loading');
     const tokenSearchInput = document.getElementById('token-search');
@@ -83,5 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
     tokenSearchInput.addEventListener('input', filterTokens);
   
     fetchSolanaTokens();
-  });
+});
+
   

@@ -54,6 +54,7 @@ body.panel-open {
 ::-webkit-scrollbar {
   width:10px;
   background-color:#eeeeee;
+  border-left:3px solid #aaaaaa;
 }
 
 ::-webkit-scrollbar-button {
@@ -148,7 +149,7 @@ body.panel-open {
   border-radius: 4px;
   z-index: 1;
   text-wrap: nowrap;
-  box-shadow: 0 0 4px #222222;
+  box-shadow: 0 0 2px #333;
 }
 
 .tooltip:hover .tooltiptext {
@@ -753,6 +754,25 @@ button.import-export {
 
 /***TOKENS***/
 
+.shadow {
+  position: fixed;
+  height: 3px;
+  background: rgba(0, 0, 0, .2);
+  z-index:1;
+}
+
+.top-shadow {
+  top: 204px;
+  left: 11px;
+  width: 369px;
+}
+
+.bottom-shadow {
+  top: 549px;
+  left: 11px;
+  width: 369px;
+}
+
 .tokens-head {
   display: flex;
   flex-grow: 0;
@@ -778,25 +798,59 @@ button.import-export {
   justify-content:center;
   order: 0;
   padding: 0;
-  gap:4px;
+  gap:0;
   width:100%;
 }
 
-.tab-button {
+.tab-button,
+.tab-button:hover {
   flex-grow: 1;
   width: 45%;
+  background:transparent;
+  border:2px solid transparent;
+  border-bottom:2px solid #cacaca;
+  border-radius:8px 8px 0 0;
+  color:#cacaca;
 }
 
-/* Progress Bar Styles */
+.tab-button.active {
+  border:2px solid #cacaca;
+  border-bottom:2px solid transparent;
+  border-radius:8px 8px 0 0;
+  color:#151515;
+}
+
+/* Refresh Icon */
+.refresh-icon {
+  position: fixed;
+  top: 204px;
+  left: 10px;
+  padding: 0 5px;
+  border-radius: 0 0 50% 0;
+  border-right: 3px solid rgba(0, 0, 0, .3);
+  border-bottom: 3px solid rgba(0, 0, 0, .3);
+  background: #ffffff;
+  color: #45a049;
+  font-size: 20px;
+  font-weight:bold;
+  cursor: pointer;
+  z-index:2;
+}
+
+.refresh-icon:hover {
+  color: #45a049;
+}
+
+/* Progress Bar */
 .progress-container {
-  width: 100%;
-  background-color: #f3f3f3;
+  position:fixed;
+  top: 205px;
+  left: 12px;
+  width: 370px;
+  height: 28px;
   border-radius: 0;
-  margin-bottom: 10px;
-  height: 20px;
-  position: absolute;
-  top:0;
-  left:0;
+  background: transparent;
+  z-index:3;
 }
 
 .progress-bar {
@@ -808,31 +862,14 @@ button.import-export {
 }
 
 .progress-text {
-  position: absolute;
-  top: 0;
-  left: 20px;
+  position:absolute;
+  top: 5px;
+  left: 24px;
   transform: translateX(-50%);
+  font-size: 14px;
   font-weight: bold;
   line-height: 20px;
-  font-size: 14px;
-}
-
-/* Refresh Icon Style */
-.refresh-icon {
-  font-size: 15px;
-  font-weight:bold;
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #151515;
-  background: #4caf50;
-  border-radius: 0 0 50% 0;
-  padding: 0 5px;
-}
-
-.refresh-icon:hover {
-  color: #45a049;
+  color:#ffffff;
 }
 
 .token-search,
@@ -892,6 +929,7 @@ button.import-export {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 2px solid rgba(0, 0, 0, .2);
 }
 
 .flex-list .list-item:hover {
@@ -909,6 +947,7 @@ button.import-export {
   display: none;
   padding: 10px;
   position:relative;
+  border-left:3px solid #aaaaaa;
 }
 
 .tokens-content ul {
@@ -1054,6 +1093,7 @@ body.dark-mode .updates {
 body.dark-mode ::-webkit-scrollbar {
   width:10px;
   background-color:#1d1d1d;
+  border-left:3px solid #111111;
 }
 body.dark-mode ::-webkit-scrollbar-button {
   display:none;
@@ -1088,13 +1128,23 @@ body.dark-mode button:hover {
 }
 
 body.dark-mode .settings-icon,
-body.dark-mode .telegram-icon {
+body.dark-mode .telegram-icon,
+body.dark-mode .refresh-icon {
   color: #94E5A0;
 }
 
+body.dark-mode .progress-bar {
+  background:#00ab33;
+}
+
 body.dark-mode .settings-icon:hover,
-body.dark-mode .telegram-icon:hover {
+body.dark-mode .telegram-icon:hover,
+body.dark-mode .refresh-icon:hover {
   color: #c8edce;
+}
+
+body.dark-mode .refresh-icon {
+  background:#303030;
 }
 
 body.dark-mode .info-icon {
@@ -1132,10 +1182,23 @@ body.dark-mode .flex-list .list-item:hover {
   background-color: #2d4731;
 }
 
-body.dark-mode .tablink.active,
-body.dark-mode .tablink.active:hover {
-  background-color: #303030;
+body.dark-mode .tab-button,
+body.dark-mode .tab-button:hover {
+  color: #888888;
+  background:transparent;
+}
+
+body.dark-mode .tab-button.active,
+body.dark-mode .tabbutton.active:hover {
   color: #ffffff;
+}
+
+body.dark-mode .tabcontent {
+  border-left:3px solid #111111;
+}
+
+body.dark-mode .shadow {
+  background: rgba(0, 0, 0, .5);
 }
 
 body.dark-mode .nav-list-item {
