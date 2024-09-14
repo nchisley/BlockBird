@@ -14,14 +14,14 @@ Colors
 --------
 Neutrals
 #0C0C0C Space
-#151515 Meteor
-#1d1d1d Charcoal
-#232323 Mud
-#303030 Metal
-#707070 Steel
-#888888 Rock
-#cacaca Ash
-#eeeeee Dust
+#111111 Meteor
+#222222 Charcoal
+#333333 Mud
+#707070 Metal
+#888888 Steel
+#cacaca Rock
+#eeeeee Ash
+#dddddd Dust
 --------
 */
 
@@ -66,13 +66,18 @@ body.panel-open {
 }
 
 .settings-icon {
-  font-size: 20px;
-  position: absolute;
-  top: 8px;
-  left: 10px;
+  margin-bottom: 10px;
   text-decoration: none;
   color: #2d4731;
   cursor: pointer;
+  font-size: 21px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.settings-icon .tooltiptext {
+  top: unset;
+  left: 105px;
 }
 
 .settings-icon:hover {
@@ -80,18 +85,18 @@ body.panel-open {
 }
 
 .telegram-icon {
-  font-size: 21px;
-  position: absolute;
-  top: 8px;
-  right: 10px;
+  margin-bottom: 10px;
   text-decoration: none;
   color: #2d4731;
   cursor: pointer;
+  font-size: 21px;
+  border-radius: 4px;
+  font-weight: bold;
 }
 
 .telegram-icon .tooltiptext {
-  right:25px;
-  left:unset;
+  top: unset;
+  right: 108px;
 }
 
 .telegram-icon:hover {
@@ -115,11 +120,11 @@ body.panel-open {
 }
 
 .info-icon .tooltiptext {
-  left:8px;
+  left:24px;
   top:80px;
   box-sizing:border-box;
-  width:384px;
-  padding:15px 20px 5px 20px;
+  width:354px;
+  padding:10px 10px 0 10px;
   text-align:left;
   font-size:12px;
   text-wrap:wrap;
@@ -140,8 +145,6 @@ body.panel-open {
 .tooltiptext {
   visibility: hidden;
   position:absolute;
-  top:0;
-  left:25px;
   background:#ccd7f1;
   color: #1d1d1d;
   font-size:12px;
@@ -240,7 +243,7 @@ button {
   border-radius: 4px;
   padding: 10px;
   text-decoration: none;
-  color: #151515;
+  color: #111111;
   font-size: 16px;
   font-weight: bold;
   cursor:pointer;
@@ -393,7 +396,7 @@ input[type="checkbox"] {
   padding: 5px;
   text-decoration: none;
   height:20px;
-  color:#151515;
+  color:#111111;
   font-weight:bold;
   text-transform: none;
   font-size:16px;
@@ -520,7 +523,7 @@ input[type="checkbox"] {
   background-color: #94E5A0;
   border-radius: 4px;
   padding: 10px;
-  color:#151515;
+  color:#111111;
   font-size:16px;
   font-weight:bold;
   margin:10px 0 -10px 0;
@@ -614,7 +617,7 @@ input[type="checkbox"] {
   margin: 2px;
   padding: 8px;
   background-color: #eeeeee;
-  color:#151515;
+  color:#111111;
   font-family: "Roboto", sans-serif;
   font-size:14px;
   border-style:none;
@@ -720,7 +723,7 @@ button.import-export {
   overflow-y: scroll;
   padding: 8px 8px 0 8px;
   background-color: #cacaca;
-  color:#151515;
+  color:#111111;
   flex-grow: 1;
 }
 
@@ -804,22 +807,39 @@ button.import-export {
   width:100%;
 }
 
+.tab-bg {
+  background:#aaaaaa;
+  width:100%;
+  position:absolute;
+  top:78px;
+  left:0;
+  height:62px;
+  z-index:-1;
+  border-bottom:2px solid #888;
+}
+
 .tab-button,
 .tab-button:hover {
   flex-grow: 1;
   width: 45%;
   background:transparent;
   border:2px solid transparent;
-  border-bottom:2px solid #cacaca;
+  border-bottom:2px solid #888;
   border-radius:8px 8px 0 0;
-  color:#cacaca;
+  color:#777;
+}
+
+.tab-button:hover {
+  color:#111111;
 }
 
 .tab-button.active {
-  border:2px solid #cacaca;
+  border:2px solid #888;
   border-bottom:2px solid transparent;
   border-radius:8px 8px 0 0;
-  color:#151515;
+  color:#111111;
+  background:#ffffff;
+  cursor:default;
 }
 
 /* Refresh Icon */
@@ -909,7 +929,7 @@ button.import-export {
   overflow-y: scroll;
   padding: 8px 8px 0 8px;
   background-color: #cacaca;
-  color:#151515;
+  color:#111111;
   flex-grow: 1;
 }
 
@@ -992,7 +1012,7 @@ button.import-export {
 }
 
 #lst-token-list .btn {
-  border-radius:50%;
+  border-radius:4px;
   cursor:pointer;
   background:#2d4731;
   width:18px;
@@ -1001,7 +1021,7 @@ button.import-export {
 }
 
 #lst-token-list .btn:hover {
-  background:#689f70;
+  background:#00ab33;
 }
 
 #lst-token-list .button-icon {
@@ -1017,7 +1037,7 @@ button.import-export {
 
 #lst-token-list .tooltiptext {
   top:unset;
-  bottom: 66px;
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -1034,9 +1054,8 @@ button.import-export {
 .apy-info,
 .tvl-info {
   font-family: "Jura", sans-serif;
-  color:#00ab33;
-  font-weight: bold;
-  text-shadow: 0 1px #222222;
+  color:#2d4731;
+  font-weight: 700;
 }
 
 .apy-info {
@@ -1084,12 +1103,12 @@ button.import-export {
 /***DARK MODE***/
 
 body.dark-mode {
-  background-color: #303030;
+  background-color: #333333;
   color: #ffffff;
 }
 
 body.dark-mode .updates {
-  background-color:#151515;
+  background-color:#111111;
 }
 
 body.dark-mode ::-webkit-scrollbar {
@@ -1105,18 +1124,18 @@ body.dark-mode ::-webkit-scrollbar-thumb {
 }
 
 body.dark-mode .header {
-  background-color:#232323;
+  background-color:#222222;
 }
 
 body.dark-mode .footer {
-  background-color:#303030;
+  background-color:#222222;
 }
 
 body.dark-mode input,
 body.dark-mode select {
-  background-color: #151515;
+  background-color: #111111;
   color: #ffffff;
-  border: 1px solid #151515;
+  border: 1px solid #111111;
 }
 
 body.dark-mode input:focus,
@@ -1146,7 +1165,7 @@ body.dark-mode .refresh-icon:hover {
 }
 
 body.dark-mode .refresh-icon {
-  background:#303030;
+  background:#333333;
 }
 
 body.dark-mode .info-icon,
@@ -1160,17 +1179,22 @@ body.dark-mode .info-icon a:hover {
 }
 
 body.dark-mode .tooltiptext {
-  background:#ffffff;
-  color:#151515;
+  background:#c8edce;
+  color:#111111;
 }
 
 body.dark-mode h1 {
   color:#ffffff;
 }
 
+body.dark-mode .apy-info,
+body.dark-mode .tvl-info {
+  color:#4caf50;
+}
+
 body.dark-mode .pagination-controls {
-  background-color:#151515;
-  border: 1px solid #151515;
+  background-color:#111111;
+  border: 1px solid #111111;
 }
 
 body.dark-mode .list-item {
@@ -1186,19 +1210,29 @@ body.dark-mode .flex-list .list-item:hover {
   background-color: #2d4731;
 }
 
+body.dark-mode .tab-bg {
+  background:#222222;
+  border-bottom:2px solid #111111;
+}
+
 body.dark-mode .tab-button,
 body.dark-mode .tab-button:hover {
-  color: #888888;
+  color: #555555;
   background:transparent;
   border:2px solid transparent;
-  border-bottom:2px solid #666666;
+  border-bottom:2px solid #111111;
+}
+
+body.dark-mode .tab-button:hover {
+  color: #ffffff;
 }
 
 body.dark-mode .tab-button.active,
 body.dark-mode .tabbutton.active:hover {
-  color: #ffffff;
-  border:2px solid #666666;
+  border:2px solid #111111;
   border-bottom:2px solid transparent;
+  color:#ffffff;
+  background:#333333;
 }
 
 body.dark-mode .tabcontent {
@@ -1215,20 +1249,20 @@ body.dark-mode .nav-list-item {
 }
 
 body.dark-mode .nav-list-item:hover {
-  background-color: #689f70;
+  background-color: #222222;
 }
 
 body.dark-mode .nav-list-item.current-page {
-  background-color:#303030;
+  background-color:#222222;
   cursor:unset;
 }
 
 body.dark-mode .my-wallets,
 body.dark-mode .tokens-content {
-  background-color: #151515;
+  background-color: #111111;
   color:#cacaca;
 }
 
 body.dark-mode .content-scanner {
-  background:#151515;
+  background:#111111;
 }
