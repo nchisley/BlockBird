@@ -13,15 +13,16 @@ Colors
 #132415 Olive
 --------
 Neutrals
-#0C0C0C Space
+#000000 Space
 #111111 Meteor
 #222222 Charcoal
 #333333 Mud
-#707070 Metal
+#777777 Metal
 #888888 Steel
-#cacaca Rock
-#eeeeee Ash
-#dddddd Dust
+#bbbbbb Rock
+#dddddd Ash
+#eeeeee Dust
+#ffffff Cloud
 --------
 */
 
@@ -54,7 +55,7 @@ body.panel-open {
 ::-webkit-scrollbar {
   width:10px;
   background-color:#eeeeee;
-  border-left:3px solid #aaaaaa;
+  border-left:1px solid #bbbbbb;
 }
 
 ::-webkit-scrollbar-button {
@@ -166,7 +167,8 @@ body.panel-open {
   flex-basis: auto;
   align-self: auto;
   order: 0;
-  padding: 10px 10px 0 10px;
+  padding: 0 10px 10px 10px;
+  background:#bbbbbb;
 }
 
 #setup-link {
@@ -247,7 +249,6 @@ button {
   font-size: 16px;
   font-weight: bold;
   cursor:pointer;
-  border-width:0;
 }
 
 button:hover {
@@ -257,9 +258,9 @@ button:hover {
 
 input,
 select {
-  background-color: #cacaca;
+  background-color: #dddddd;
   color:#1d1d1d;
-  border: 1px solid #cacaca;
+  border: 1px solid #dddddd;
   outline:0;
   border-radius:4px;
   height:30px;
@@ -336,7 +337,7 @@ input[type="checkbox"] {
   align-self: auto;
   order: 0;
   padding: 10px 10px 15px 10px;
-  background-color: #eeeeee;
+  background-color: #bbbbbb;
 }
 
 /*CONTENT*/
@@ -364,7 +365,8 @@ input[type="checkbox"] {
   align-content:center;
   flex-grow:0;
   padding: 4px;
-  background-color: #ffffff;
+  background-color: #bbbbbb;
+  border-top:2px solid #888888;
 }
 
 #nav-container {
@@ -407,7 +409,7 @@ input[type="checkbox"] {
 }
 
 .nav-list-item.current-page {
-  background-color: #ffffff;
+  background-color: #bbbbbb;
   cursor:unset;
 }
 
@@ -416,6 +418,7 @@ input[type="checkbox"] {
 .settings-content {
   align-items: flex-start;
   align-content: flex-start;
+  border-top:2px solid #888888;
 }
 
 .settings-select {
@@ -454,6 +457,7 @@ input[type="checkbox"] {
   order: 0;
   padding: 10px 10px 0 10px;
   overflow-y: hidden;
+  border-top:2px solid #888888;
 }
 
 .banner {
@@ -467,7 +471,7 @@ input[type="checkbox"] {
 }
 
 .updates {
-  background-color:#cacaca;
+  background-color:#bbbbbb;
   margin:0 10px 10px 10px;
   text-align:left;
   font-size:14px;
@@ -489,7 +493,8 @@ input[type="checkbox"] {
   align-items:center;
   align-content:center;
   margin:10px;
-  background:#cacaca;
+  background:#dddddd;
+  border: 3px solid #bbbbbb;
 }
 
 #current-url {
@@ -517,6 +522,7 @@ input[type="checkbox"] {
   justify-content:center;
   order: 0;
   padding: 10px;
+  border-top:2px solid #888888;
 }
 
 .scanner-button {
@@ -546,6 +552,10 @@ input[type="checkbox"] {
 }
 
 /***EXPLORERS***/
+
+.explore-head {
+  border-top:2px solid #888888;
+}
 
 .explore-head,
 .explore-foot {
@@ -595,8 +605,8 @@ input[type="checkbox"] {
 .pagination-controls {
   display: flex;
   padding:5px;
-  background-color:#cacaca;
-  border: 1px solid #cacaca;
+  background-color:#dddddd;
+  border: 2px solid #bbbbbb;
   border-radius:4px;
   justify-content: center;
   align-items: end;
@@ -653,6 +663,7 @@ input[type="checkbox"] {
   align-self: auto;
   order: 0;
   padding: 10px 10px 0 10px;
+  border-top:2px solid #888888;
 }
 
 button#add-wallet {
@@ -716,15 +727,15 @@ button.import-export {
 }
 
 .my-wallets {
-  background-color:#cacaca;
+  background-color:#dddddd;
   margin:0 10px 10px 10px;
   text-align:left;
   font-size:14px;
   overflow-y: scroll;
   padding: 8px 8px 0 8px;
-  background-color: #cacaca;
   color:#111111;
   flex-grow: 1;
+  border: 3px solid #bbbbbb;
 }
 
 .wallet-item {
@@ -808,7 +819,7 @@ button.import-export {
 }
 
 .tab-bg {
-  background:#aaaaaa;
+  background:#bbbbbb;
   width:100%;
   position:absolute;
   top:78px;
@@ -834,7 +845,7 @@ button.import-export {
 }
 
 .tab-button.active {
-  border:2px solid #888;
+  border:2px solid #888888;
   border-bottom:2px solid transparent;
   border-radius:8px 8px 0 0;
   color:#111111;
@@ -848,9 +859,9 @@ button.import-export {
   top: 204px;
   left: 10px;
   padding: 0 5px;
-  border-radius: 0 0 50% 0;
-  border-right: 3px solid rgba(0, 0, 0, .3);
-  border-bottom: 3px solid rgba(0, 0, 0, .3);
+  border-radius: 0 0 4px 0;
+  border-right: 3px solid #bbbbbb;
+  border-bottom: 3px solid #bbbbbb;
   background: #ffffff;
   color: #45a049;
   font-size: 20px;
@@ -863,15 +874,24 @@ button.import-export {
   color: #45a049;
 }
 
+.lst-total {
+  position:relative;
+  font-size:12px;
+  top:-2px;
+}
+
 /* Progress Bar */
 .progress-container {
   position:fixed;
   top: 204px;
   left: 10px;
-  width: 370px;
+  width: 364px;
   height: 28px;
   border-radius: 0;
-  background: transparent;
+  background: #dddddd;
+  border-width: 3px 0 0 3px;
+  border-style: solid;
+  border-color: #bbbbbb;
   z-index:3;
 }
 
@@ -922,13 +942,12 @@ button.import-export {
 }
 
 .tokens-content {
-  background-color:#cacaca;
+  background-color:#dddddd;
   margin:0 10px 10px 10px;
   text-align:left;
   font-size:14px;
   overflow-y: scroll;
   padding: 8px 8px 0 8px;
-  background-color: #cacaca;
   color:#111111;
   flex-grow: 1;
 }
@@ -943,7 +962,7 @@ button.import-export {
 
 .flex-list .list-item {
   background-color: #daecdd;
-  padding: 15px 10px;
+  padding: 13px 10px;
   border-radius: 4px;
   text-align: center;
   color: #1d1d1d;
@@ -969,7 +988,9 @@ button.import-export {
   display: none;
   padding: 10px;
   position:relative;
-  border-left:3px solid #aaaaaa;
+  border-width: 3px 3px 3px 3px;
+  border-style: solid;
+  border-color: #bbbbbb;
 }
 
 .tokens-content ul {
@@ -1114,7 +1135,7 @@ body.dark-mode .updates {
 body.dark-mode ::-webkit-scrollbar {
   width:10px;
   background-color:#1d1d1d;
-  border-left:3px solid #111111;
+  border-left:0 solid #000000;
 }
 body.dark-mode ::-webkit-scrollbar-button {
   display:none;
@@ -1124,18 +1145,19 @@ body.dark-mode ::-webkit-scrollbar-thumb {
 }
 
 body.dark-mode .header {
-  background-color:#222222;
+  background-color:#111111;
 }
 
 body.dark-mode .footer {
-  background-color:#222222;
+  background-color:#111111;
+  border-top:2px solid #000000;
 }
 
 body.dark-mode input,
 body.dark-mode select {
-  background-color: #111111;
+  background-color: #222222;
   color: #ffffff;
-  border: 1px solid #111111;
+  border: 1px solid #000000;
 }
 
 body.dark-mode input:focus,
@@ -1144,14 +1166,17 @@ body.dark-mode select:focus {
   outline:0;
 }
 
-body.dark-mode button:hover {
-  background-color: #689f70;
-}
-
 body.dark-mode .settings-icon,
 body.dark-mode .telegram-icon,
 body.dark-mode .refresh-icon {
   color: #94E5A0;
+}
+
+body.dark-mode .progress-container {
+  background:#222222;
+  border-width: 3px 0 0 3px;
+  border-style: solid;
+  border-color: #000000;
 }
 
 body.dark-mode .progress-bar {
@@ -1166,6 +1191,8 @@ body.dark-mode .refresh-icon:hover {
 
 body.dark-mode .refresh-icon {
   background:#333333;
+  border-right: 3px solid #000000;
+  border-bottom: 3px solid #000000;
 }
 
 body.dark-mode .info-icon,
@@ -1193,13 +1220,14 @@ body.dark-mode .tvl-info {
 }
 
 body.dark-mode .pagination-controls {
-  background-color:#111111;
-  border: 1px solid #111111;
+  background-color:#222222;
+  border: 2px solid #000000;
 }
 
 body.dark-mode .list-item {
   background-color: #132415;
   color:#ffffff;
+  border:1px solid #000000;
 }
 
 body.dark-mode .list-item:hover {
@@ -1211,8 +1239,8 @@ body.dark-mode .flex-list .list-item:hover {
 }
 
 body.dark-mode .tab-bg {
-  background:#222222;
-  border-bottom:2px solid #111111;
+  background:#111111;
+  border-bottom:2px solid #000000;
 }
 
 body.dark-mode .tab-button,
@@ -1229,14 +1257,16 @@ body.dark-mode .tab-button:hover {
 
 body.dark-mode .tab-button.active,
 body.dark-mode .tabbutton.active:hover {
-  border:2px solid #111111;
+  border:2px solid #000000;
   border-bottom:2px solid transparent;
   color:#ffffff;
   background:#333333;
 }
 
 body.dark-mode .tabcontent {
-  border-left:3px solid #111111;
+  border-width: 3px 3px 3px 3px;
+  border-style: solid;
+  border-color: #000000;
 }
 
 body.dark-mode .shadow {
@@ -1249,20 +1279,30 @@ body.dark-mode .nav-list-item {
 }
 
 body.dark-mode .nav-list-item:hover {
-  background-color: #222222;
+  background-color: #689f70;
 }
 
 body.dark-mode .nav-list-item.current-page {
-  background-color:#222222;
+  background-color:#111111;
   cursor:unset;
 }
 
 body.dark-mode .my-wallets,
 body.dark-mode .tokens-content {
-  background-color: #111111;
-  color:#cacaca;
+  background-color: #222222;
+  color:#bbbbbb;
+  border: 3px solid #000000;
 }
 
 body.dark-mode .content-scanner {
-  background:#111111;
+  background:#222222;
+  border: 3px solid #000000;
+}
+
+body.dark-mode .wallets-head,
+body.dark-mode .explore-head,
+body.dark-mode .scan-control,
+body.dark-mode .ads,
+body.dark-mode .settings-content {
+  border-top:2px solid #000000;
 }

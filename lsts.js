@@ -216,7 +216,11 @@ document.addEventListener('DOMContentLoaded', function () {
     lstTokenListContainer.style.display = 'flex';  // Show the list container
   
     lstList = sortLSTList(lstList, lstSortSelect.value);  // Apply sorting
-  
+
+    // Update the total count next to the refresh icon
+    const lstTotalElement = document.getElementById('lst-total');
+    lstTotalElement.textContent = `${lstList.length}`;
+
     for (const item of lstList) {
       const solscanUrl = `https://solscan.io/token/${item.mint}`;
       const sanctumTradeUrl = `https://app.sanctum.so/trade/SOL-${item.symbol}`;
@@ -245,7 +249,6 @@ document.addEventListener('DOMContentLoaded', function () {
       const buttonsContainer = document.createElement('div');
       buttonsContainer.className = 'buttons-container';
 
-      // Trade Button with Tooltip
       const tradeButton = document.createElement('a');
       tradeButton.href = sanctumTradeUrl;
       tradeButton.target = '_blank';
@@ -255,7 +258,6 @@ document.addEventListener('DOMContentLoaded', function () {
           <span class="tooltiptext" data-translate="swap_sanctum">Swap on Sanctum</span>
       `;
 
-      // Swap Button with Tooltip
       const swapButton = document.createElement('a');
       swapButton.href = jupiterSwapUrl;
       swapButton.target = '_blank';
@@ -265,7 +267,6 @@ document.addEventListener('DOMContentLoaded', function () {
           <span class="tooltiptext" data-translate="swap_jupiter">Swap on Jupiter</span>
       `;
 
-      // Explorer Button with Tooltip
       const explorerButton = document.createElement('a');
       explorerButton.href = solscanUrl;
       explorerButton.target = '_blank';
@@ -288,6 +289,7 @@ document.addEventListener('DOMContentLoaded', function () {
       lstTokenListContainer.appendChild(tokenItem);
     }
   }
+
 
   function parseTOML(data) {
     const items = [];

@@ -58,17 +58,17 @@
 
   <!--Tokens Content-->
   <div id="SolanaTokens" class="content tokens-content tabcontent">
-    <span class="shadow top-shadow"></span>
-    <span class="shadow bottom-shadow"></span>
+    <!--<span class="shadow top-shadow"></span>
+    <span class="shadow bottom-shadow"></span>-->
     <div id="loading" data-translate="loading">Loading...</div>
     <div id="token-list" class="flex-list"></div>
   </div>
 
   <!--LST Content-->
   <div id="SanctumLSTs" class="content tokens-content tabcontent">
-    <span class="shadow top-shadow"></span>
-    <span class="shadow bottom-shadow"></span>
-    <div id="lst-refresh" class="refresh-icon">&#x21bb;</div>
+    <div id="lst-refresh" class="refresh-icon">
+      &#x21bb; <span id="lst-total" class="lst-total">0</span>
+    </div>
     <div id="lst-progress-container" class="progress-container">
       <div id="lst-progress-bar" class="progress-bar"></div>
       <span id="lst-progress-text" class="progress-text">0%</span>
